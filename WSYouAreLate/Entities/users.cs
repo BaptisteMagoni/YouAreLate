@@ -1,4 +1,4 @@
-namespace WSYouAreLate.DAO
+namespace WSYouAreLate.Entities
 {
     using System;
     using System.Collections.Generic;
@@ -12,17 +12,18 @@ namespace WSYouAreLate.DAO
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public users()
         {
-            retard = new HashSet<retard>();
+            lateticket = new HashSet<lateticket>();
+            users_late = new HashSet<users_late>();
         }
 
         [Key]
         public int idusers { get; set; }
 
         [StringLength(45)]
-        public string Nom { get; set; }
+        public string firstname { get; set; }
 
         [StringLength(45)]
-        public string Prenom { get; set; }
+        public string lastname { get; set; }
 
         [Required]
         [StringLength(45)]
@@ -36,6 +37,9 @@ namespace WSYouAreLate.DAO
         public string classe { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<retard> retard { get; set; }
+        public virtual ICollection<lateticket> lateticket { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<users_late> users_late { get; set; }
     }
 }

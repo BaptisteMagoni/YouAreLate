@@ -21,3 +21,5 @@ C:\Users\ZasTa\source\repos\WSYouAreLate\WSYouAreLate\obj\Debug\WSYouAreLate.csp
 C:\Users\ZasTa\source\repos\WSYouAreLate\WSYouAreLate\obj\Debug\WSYouAreLate.csproj.CopyComplete
 C:\Users\ZasTa\source\repos\WSYouAreLate\WSYouAreLate\obj\Debug\WSYouAreLate.dll
 C:\Users\ZasTa\source\repos\WSYouAreLate\WSYouAreLate\obj\Debug\WSYouAreLate.pdb
+C:\Users\ZasTa\source\repos\WSYouAreLate\WSYouAreLate\obj\Debug\WSYouAreLate.Properties.Settings.resources
+C:\Users\ZasTa\source\repos\WSYouAreLate\WSYouAreLate\obj\Debug\WSYouAreLate.csproj.GenerateResource.cache
