@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WSYouAreLate", "WSYouAreLate\WSYouAreLate.csproj", "{0357C24C-4776-47A3-ACBB-DF5669855401}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebYouAreLate", "WebYouAreLate\WebYouAreLate.csproj", "{F797ED46-C992-4EFC-BBB8-37FA1EC6668D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0357C24C-4776-47A3-ACBB-DF5669855401}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0357C24C-4776-47A3-ACBB-DF5669855401}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0357C24C-4776-47A3-ACBB-DF5669855401}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0357C24C-4776-47A3-ACBB-DF5669855401}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F797ED46-C992-4EFC-BBB8-37FA1EC6668D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F797ED46-C992-4EFC-BBB8-37FA1EC6668D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F797ED46-C992-4EFC-BBB8-37FA1EC6668D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F797ED46-C992-4EFC-BBB8-37FA1EC6668D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FEE52D1B-3D67-48BC-8E3A-D45E6019CF7E}
+	EndGlobalSection
+EndGlobal
