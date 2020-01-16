@@ -15,33 +15,56 @@
     <div class="card col-3">
         <img class="card-img-top" src="img/funny1.gif" alt="Card image cap">
         <div class="card-body">
-            Mon Chat a mangé mon reveil
+            Excuse 1 
         </div>
         <div class="card-body">
-            <img src="img/icons/clap.svg" alt="Bien joué Nils" style="width: 32px;" data-toggle="tooltip" data-placement="top" title="<img src='img/clap.gif'>" >
-            <img src="img/icons/hit.svg" alt="Va bosser !" style="width: 32px;"  data-toggle="tooltip" data-placement="top" title="<img src='img/slap.gif'>">
+            <form action="">
+                <a href="#" data-value="0" data-url="/Home/UpVote/0"><img src="img/icons/clap.svg" alt="Bien joué Nils" style="width: 32px;" data-toggle="tooltip" data-placement="top" title="<img src='img/clap.gif'>"></a>
+                <a href="#" data-value="0"><img src="img/icons/hit.svg" alt="Va bosser !" style="width: 32px;" data-toggle="tooltip" data-placement="top" title="<img src='img/slap.gif'>"></a></form>
+            
+            <img src="img/icons/hit.svg" alt="Va bosser !" style="width: 32px;" data-toggle="tooltip" data-placement="top" title="<img src='img/slap.gif'>">
         </div>
     </div>
     <div class="card col-3">
         <img class="card-img-top" src="img/funny2.gif" alt="Card image cap">
         <div class="card-body">
-            Ma femme a acouché
+            Excuse 2
         </div>
     </div>
     <div class="card col-3">
         <img class="card-img-top" src="img/chien.gif" alt="Card image cap">
         <div class="card-body">
-            Je me suis fais renversé par la directrice
+            Excuse 3 
         </div>
     </div>
     <div class="card col-3">
         <div class="card-body">
-            J'utilise JAVA pour me reveiller
+           Excuse 4
         </div>
     </div>
     
 </div>
 
 <script >
-    $('[data-toggle="tooltip"]').tooltip({html : true})
+    var init = function(){
+        
+        $("a").on("click", function(){
+            $.ajax({
+                url: $(this).data("url"),
+                type: 'default GET (Other values: POST)',
+                dataType: 'default: Intelligent Guess (Other values: xml, json, script, or html)',
+                data: {param1: 'value1'},
+            })
+            .done(function() {
+                console.log("success");
+            })
+            .fail(function() {
+                console.log("error");
+            })
+            .always(function() {
+                console.log("complete");
+            });
+        }) 
+
+    }
 </script>

@@ -18,6 +18,17 @@ namespace WebYouAreLate.Controllers
             _logger = logger;
         }
 
+        public ActionResult UpVote(int idLate)
+        {
+            System.Diagnostics.Debug.WriteLine(idLate.ToString());
+            return RedirectToAction("Index");
+        }
+
+        public void DownVote()
+        {
+            
+        }
+
         public IActionResult Index()
         {
             return View();
