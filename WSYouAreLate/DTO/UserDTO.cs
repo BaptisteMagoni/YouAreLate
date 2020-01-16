@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using WSYouAreLate.Entities;
 
 namespace WSYouAreLate.DTO
 {
@@ -19,6 +20,8 @@ namespace WSYouAreLate.DTO
         public string password { get; set; }
 
         public string classe { get; set; }
+
+        public List<LateTicketDTO> tickets { get; set; }
 
     }
 }

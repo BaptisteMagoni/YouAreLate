@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ServiceReference1
+namespace ServiceReferenceLate
 {
     using System.Runtime.Serialization;
     
@@ -162,11 +162,11 @@ namespace ServiceReference1
         
         private string lastnameField;
         
-        private ServiceReference1.lateticket[] lateticketField;
+        private ServiceReferenceLate.lateticket[] lateticketField;
         
         private string passwordField;
         
-        private ServiceReference1.users_late[] users_lateField;
+        private ServiceReferenceLate.users_late[] users_lateField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string classe
@@ -234,7 +234,7 @@ namespace ServiceReference1
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public ServiceReference1.lateticket[] lateticket
+        public ServiceReferenceLate.lateticket[] lateticket
         {
             get
             {
@@ -260,7 +260,7 @@ namespace ServiceReference1
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public ServiceReference1.users_late[] users_late
+        public ServiceReferenceLate.users_late[] users_late
         {
             get
             {
@@ -289,9 +289,9 @@ namespace ServiceReference1
         
         private string imageField;
         
-        private ServiceReference1.users usersField;
+        private ServiceReferenceLate.users usersField;
         
-        private ServiceReference1.users_late[] users_lateField;
+        private ServiceReferenceLate.users_late[] users_lateField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string Subject
@@ -359,7 +359,7 @@ namespace ServiceReference1
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public ServiceReference1.users users
+        public ServiceReferenceLate.users users
         {
             get
             {
@@ -372,7 +372,7 @@ namespace ServiceReference1
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public ServiceReference1.users_late[] users_late
+        public ServiceReferenceLate.users_late[] users_late
         {
             get
             {
@@ -397,9 +397,9 @@ namespace ServiceReference1
         
         private System.Nullable<sbyte> VoteField;
         
-        private ServiceReference1.lateticket lateticketField;
+        private ServiceReferenceLate.lateticket lateticketField;
         
-        private ServiceReference1.users usersField;
+        private ServiceReferenceLate.users usersField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int Idlate
@@ -441,7 +441,7 @@ namespace ServiceReference1
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public ServiceReference1.lateticket lateticket
+        public ServiceReferenceLate.lateticket lateticket
         {
             get
             {
@@ -454,7 +454,7 @@ namespace ServiceReference1
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public ServiceReference1.users users
+        public ServiceReferenceLate.users users
         {
             get
             {
@@ -468,7 +468,7 @@ namespace ServiceReference1
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.IService1")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReferenceLate.IService1")]
     public interface IService1
     {
         
@@ -479,28 +479,28 @@ namespace ServiceReference1
         System.Threading.Tasks.Task<string> GetDataAsync(int value);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetDataUsingDataContract", ReplyAction="http://tempuri.org/IService1/GetDataUsingDataContractResponse")]
-        ServiceReference1.CompositeType GetDataUsingDataContract(ServiceReference1.CompositeType composite);
+        ServiceReferenceLate.CompositeType GetDataUsingDataContract(ServiceReferenceLate.CompositeType composite);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetDataUsingDataContract", ReplyAction="http://tempuri.org/IService1/GetDataUsingDataContractResponse")]
-        System.Threading.Tasks.Task<ServiceReference1.CompositeType> GetDataUsingDataContractAsync(ServiceReference1.CompositeType composite);
+        System.Threading.Tasks.Task<ServiceReferenceLate.CompositeType> GetDataUsingDataContractAsync(ServiceReferenceLate.CompositeType composite);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetUser", ReplyAction="http://tempuri.org/IService1/GetUserResponse")]
-        ServiceReference1.UserDTO[] GetUser();
+        ServiceReferenceLate.UserDTO[] GetUser();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetUser", ReplyAction="http://tempuri.org/IService1/GetUserResponse")]
-        System.Threading.Tasks.Task<ServiceReference1.UserDTO[]> GetUserAsync();
+        System.Threading.Tasks.Task<ServiceReferenceLate.UserDTO[]> GetUserAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AuthentificateUser", ReplyAction="http://tempuri.org/IService1/AuthentificateUserResponse")]
-        ServiceReference1.users AuthentificateUser(string login, string password);
+        ServiceReferenceLate.users AuthentificateUser(string login, string password);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AuthentificateUser", ReplyAction="http://tempuri.org/IService1/AuthentificateUserResponse")]
-        System.Threading.Tasks.Task<ServiceReference1.users> AuthentificateUserAsync(string login, string password);
+        System.Threading.Tasks.Task<ServiceReferenceLate.users> AuthentificateUserAsync(string login, string password);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/CreateUser", ReplyAction="http://tempuri.org/IService1/CreateUserResponse")]
-        ServiceReference1.UserDTO CreateUser(ServiceReference1.users user);
+        ServiceReferenceLate.UserDTO CreateUser(ServiceReferenceLate.users user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/CreateUser", ReplyAction="http://tempuri.org/IService1/CreateUserResponse")]
-        System.Threading.Tasks.Task<ServiceReference1.UserDTO> CreateUserAsync(ServiceReference1.users user);
+        System.Threading.Tasks.Task<ServiceReferenceLate.UserDTO> CreateUserAsync(ServiceReferenceLate.users user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/CreateCommentary", ReplyAction="http://tempuri.org/IService1/CreateCommentaryResponse")]
         void CreateCommentary();
@@ -552,13 +552,13 @@ namespace ServiceReference1
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
-    public interface IService1Channel : ServiceReference1.IService1, System.ServiceModel.IClientChannel
+    public interface IService1Channel : ServiceReferenceLate.IService1, System.ServiceModel.IClientChannel
     {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
-    public partial class Service1Client : System.ServiceModel.ClientBase<ServiceReference1.IService1>, ServiceReference1.IService1
+    public partial class Service1Client : System.ServiceModel.ClientBase<ServiceReferenceLate.IService1>, ServiceReferenceLate.IService1
     {
         
         /// <summary>
@@ -611,42 +611,42 @@ namespace ServiceReference1
             return base.Channel.GetDataAsync(value);
         }
         
-        public ServiceReference1.CompositeType GetDataUsingDataContract(ServiceReference1.CompositeType composite)
+        public ServiceReferenceLate.CompositeType GetDataUsingDataContract(ServiceReferenceLate.CompositeType composite)
         {
             return base.Channel.GetDataUsingDataContract(composite);
         }
         
-        public System.Threading.Tasks.Task<ServiceReference1.CompositeType> GetDataUsingDataContractAsync(ServiceReference1.CompositeType composite)
+        public System.Threading.Tasks.Task<ServiceReferenceLate.CompositeType> GetDataUsingDataContractAsync(ServiceReferenceLate.CompositeType composite)
         {
             return base.Channel.GetDataUsingDataContractAsync(composite);
         }
         
-        public ServiceReference1.UserDTO[] GetUser()
+        public ServiceReferenceLate.UserDTO[] GetUser()
         {
             return base.Channel.GetUser();
         }
         
-        public System.Threading.Tasks.Task<ServiceReference1.UserDTO[]> GetUserAsync()
+        public System.Threading.Tasks.Task<ServiceReferenceLate.UserDTO[]> GetUserAsync()
         {
             return base.Channel.GetUserAsync();
         }
         
-        public ServiceReference1.users AuthentificateUser(string login, string password)
+        public ServiceReferenceLate.users AuthentificateUser(string login, string password)
         {
             return base.Channel.AuthentificateUser(login, password);
         }
         
-        public System.Threading.Tasks.Task<ServiceReference1.users> AuthentificateUserAsync(string login, string password)
+        public System.Threading.Tasks.Task<ServiceReferenceLate.users> AuthentificateUserAsync(string login, string password)
         {
             return base.Channel.AuthentificateUserAsync(login, password);
         }
         
-        public ServiceReference1.UserDTO CreateUser(ServiceReference1.users user)
+        public ServiceReferenceLate.UserDTO CreateUser(ServiceReferenceLate.users user)
         {
             return base.Channel.CreateUser(user);
         }
         
-        public System.Threading.Tasks.Task<ServiceReference1.UserDTO> CreateUserAsync(ServiceReference1.users user)
+        public System.Threading.Tasks.Task<ServiceReferenceLate.UserDTO> CreateUserAsync(ServiceReferenceLate.users user)
         {
             return base.Channel.CreateUserAsync(user);
         }

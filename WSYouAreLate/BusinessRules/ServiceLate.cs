@@ -49,6 +49,5 @@ namespace WSYouAreLate.BusinessRules
             UserDTO userDTO = _mapper.Map<UserDTO>(u);
             return userDTO;
         }
-
     }
 }

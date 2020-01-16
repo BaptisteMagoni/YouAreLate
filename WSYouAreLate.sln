@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WSYouAreLate", "WSYouAreLate\WSYouAreLate.csproj", "{0357C24C-4776-47A3-ACBB-DF5669855401}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebYouAreLate", "WebYouAreLate\WebYouAreLate.csproj", "{F797ED46-C992-4EFC-BBB8-37FA1EC6668D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebYouAreLate", "WebYouAreLate\WebYouAreLate.csproj", "{F797ED46-C992-4EFC-BBB8-37FA1EC6668D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModuleWebServiceLate", "ModuleWebServiceLate\ModuleWebServiceLate.csproj", "{AB5C136A-036F-4A93-863D-BF0677B860D6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{F797ED46-C992-4EFC-BBB8-37FA1EC6668D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F797ED46-C992-4EFC-BBB8-37FA1EC6668D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F797ED46-C992-4EFC-BBB8-37FA1EC6668D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB5C136A-036F-4A93-863D-BF0677B860D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB5C136A-036F-4A93-863D-BF0677B860D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB5C136A-036F-4A93-863D-BF0677B860D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB5C136A-036F-4A93-863D-BF0677B860D6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
