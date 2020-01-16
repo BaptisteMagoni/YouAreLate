@@ -6,16 +6,16 @@ using WSYouAreLate.Entities;
 
 namespace WSYouAreLate.DataAccess
 {
-    public class DaLate
+    public class LateDA
     {
-
         public List<users> GetUsers()
         {
             using(ModelLate bdd = new ModelLate())
             {
                 try
                 {
-                    return bdd.users.ToList();
+                    var test = bdd.users.ToList();
+                    return test;
                 }
                 catch
                 {
@@ -56,6 +56,5 @@ namespace WSYouAreLate.DataAccess
                 }
             }
         }
-
     }
 }

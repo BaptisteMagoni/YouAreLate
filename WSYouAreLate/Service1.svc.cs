@@ -6,6 +6,7 @@ using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
 using WSYouAreLate.BusinessRules;
+using WSYouAreLate.DTO;
 using WSYouAreLate.Entities;
 
 namespace WSYouAreLate
@@ -30,10 +31,10 @@ namespace WSYouAreLate
             throw new NotImplementedException();
         }
 
-        public users CreateUser(users users)
+        public UserDTO CreateUser(users user)
         {
             ServiceLate service = new ServiceLate();
-            return service.CreateUser(users);
+            return service.CreateUser(user);
         }
 
         public void DeleteCommentary()
@@ -74,10 +75,10 @@ namespace WSYouAreLate
             throw new NotImplementedException();
         }
 
-        public List<users> GetUser()
+        public List<UserDTO> GetUser()
         {
             ServiceLate service = new ServiceLate();
-            return service.GetUsers();
+            return  service.GetUsers();
         }
 
         public void LikeLateNotification()

@@ -4,12 +4,11 @@ namespace WSYouAreLate.Entities
     using System.Data.Entity;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
-    using WSYouAreLate.Configuration;
 
     public partial class ModelLate : DbContext
     {
         public ModelLate()
-            : base(ConnectionStringConfig.LoadConnectionString())
+            : base("name=ModelLate")
         {
         }
 

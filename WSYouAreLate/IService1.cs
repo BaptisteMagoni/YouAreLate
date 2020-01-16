@@ -5,6 +5,7 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
+using WSYouAreLate.DTO;
 using WSYouAreLate.Entities;
 
 namespace WSYouAreLate
@@ -25,13 +26,13 @@ namespace WSYouAreLate
         #region User
 
         [OperationContract]
-        List<users> GetUser();
+        List<UserDTO> GetUser();
 
         [OperationContract]
         users AuthentificateUser(string login, string password);
 
         [OperationContract]
-        users CreateUser(users users);
+        UserDTO CreateUser(users user);
 
         [OperationContract]
         void CreateCommentary();

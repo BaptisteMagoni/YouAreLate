@@ -44,6 +44,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=9.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.9.0.0\lib\net461\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -95,11 +98,15 @@
     <Compile Include="BusinessRules\ServiceLate.cs" />
     <Compile Include="Configuration\BddLateConfiguration.cs" />
     <Compile Include="Configuration\ConnectionStringConfig.cs" />
-    <Compile Include="DataAccess\DaLate.cs" />
+    <Compile Include="DataAccess\LateDA.cs" />
+    <Compile Include="DTO\LateTicketDTO.cs" />
+    <Compile Include="DTO\UserDTO.cs" />
+    <Compile Include="DTO\UserLateDTO.cs" />
     <Compile Include="Entities\lateticket.cs" />
     <Compile Include="Entities\ModelLate.cs" />
     <Compile Include="Entities\users.cs" />
     <Compile Include="Entities\users_late.cs" />
+    <Compile Include="ProfileAutoMapper\LateProfile.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
