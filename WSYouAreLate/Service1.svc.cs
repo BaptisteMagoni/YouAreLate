@@ -5,6 +5,8 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
+using WSYouAreLate.BusinessRules;
+using WSYouAreLate.Entities;
 
 namespace WSYouAreLate
 {
@@ -12,9 +14,10 @@ namespace WSYouAreLate
     // REMARQUE : pour lancer le client test WCF afin de tester ce service, sélectionnez Service1.svc ou Service1.svc.cs dans l'Explorateur de solutions et démarrez le débogage.
     public class Service1 : IService1
     {
-        public void AuthentificateUser()
+        public users AuthentificateUser(string login, string password)
         {
-            throw new NotImplementedException();
+            ServiceLate service = new ServiceLate();
+            return service.AuthentificationUser(login, password);
         }
 
         public void CreateCommentary()
@@ -27,9 +30,10 @@ namespace WSYouAreLate
             throw new NotImplementedException();
         }
 
-        public void CreateUser()
+        public users CreateUser(users users)
         {
-            throw new NotImplementedException();
+            ServiceLate service = new ServiceLate();
+            return service.CreateUser(users);
         }
 
         public void DeleteCommentary()
@@ -68,6 +72,12 @@ namespace WSYouAreLate
         public void GetLateNotification()
         {
             throw new NotImplementedException();
+        }
+
+        public List<users> GetUser()
+        {
+            ServiceLate service = new ServiceLate();
+            return service.GetUsers();
         }
 
         public void LikeLateNotification()
