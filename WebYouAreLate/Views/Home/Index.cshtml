@@ -1,8 +1,47 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Sorry I'm Late";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<style>
+    .card {
+        margin: 10px;
+    }
+    body{
+        background-image: url("img/bg.jpg");
+    } 
+</style>
+
+<div class="row">
+    <div class="card col-3">
+        <img class="card-img-top" src="img/funny1.gif" alt="Card image cap">
+        <div class="card-body">
+            Mon Chat a mangé mon reveil
+        </div>
+        <div class="card-body">
+            <img src="img/icons/clap.svg" alt="Bien joué Nils" style="width: 32px;" data-toggle="tooltip" data-placement="top" title="<img src='img/clap.gif'>" >
+            <img src="img/icons/hit.svg" alt="Va bosser !" style="width: 32px;"  data-toggle="tooltip" data-placement="top" title="<img src='img/slap.gif'>">
+        </div>
+    </div>
+    <div class="card col-3">
+        <img class="card-img-top" src="img/funny2.gif" alt="Card image cap">
+        <div class="card-body">
+            Ma femme a acouché
+        </div>
+    </div>
+    <div class="card col-3">
+        <img class="card-img-top" src="img/chien.gif" alt="Card image cap">
+        <div class="card-body">
+            Je me suis fais renversé par la directrice
+        </div>
+    </div>
+    <div class="card col-3">
+        <div class="card-body">
+            J'utilise JAVA pour me reveiller
+        </div>
+    </div>
+    
 </div>
+
+<script >
+    $('[data-toggle="tooltip"]').tooltip({html : true})
+</script>
