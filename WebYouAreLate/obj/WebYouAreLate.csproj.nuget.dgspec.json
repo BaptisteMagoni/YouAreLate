@@ -1,25 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ZasTa\\source\\repos\\YouAreLate\\WebYouAreLate\\WebYouAreLate.csproj": {}
+    "C:\\Users\\ZasTa\\Desktop\\Workspace C#\\YouAreLate\\WebYouAreLate\\WebYouAreLate.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ZasTa\\source\\repos\\YouAreLate\\WebYouAreLate\\WebYouAreLate.csproj": {
+    "C:\\Users\\ZasTa\\Desktop\\Workspace C#\\YouAreLate\\ModuleWebServiceLate\\ModuleWebServiceLate.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ZasTa\\source\\repos\\YouAreLate\\WebYouAreLate\\WebYouAreLate.csproj",
-        "projectName": "WebYouAreLate",
-        "projectPath": "C:\\Users\\ZasTa\\source\\repos\\YouAreLate\\WebYouAreLate\\WebYouAreLate.csproj",
+        "projectUniqueName": "C:\\Users\\ZasTa\\Desktop\\Workspace C#\\YouAreLate\\ModuleWebServiceLate\\ModuleWebServiceLate.csproj",
+        "projectName": "ModuleWebServiceLate",
+        "projectPath": "C:\\Users\\ZasTa\\Desktop\\Workspace C#\\YouAreLate\\ModuleWebServiceLate\\ModuleWebServiceLate.csproj",
         "packagesPath": "C:\\Users\\ZasTa\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ZasTa\\source\\repos\\YouAreLate\\WebYouAreLate\\obj\\",
+        "outputPath": "C:\\Users\\ZasTa\\Desktop\\Workspace C#\\YouAreLate\\ModuleWebServiceLate\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
           "C:\\Users\\ZasTa\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -31,6 +27,80 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "System.ServiceModel.Duplex": {
+              "target": "Package",
+              "version": "[4.4.*, )"
+            },
+            "System.ServiceModel.Http": {
+              "target": "Package",
+              "version": "[4.4.*, )"
+            },
+            "System.ServiceModel.NetTcp": {
+              "target": "Package",
+              "version": "[4.4.*, )"
+            },
+            "System.ServiceModel.Security": {
+              "target": "Package",
+              "version": "[4.4.*, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\ZasTa\\Desktop\\Workspace C#\\YouAreLate\\WebYouAreLate\\WebYouAreLate.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\ZasTa\\Desktop\\Workspace C#\\YouAreLate\\WebYouAreLate\\WebYouAreLate.csproj",
+        "projectName": "WebYouAreLate",
+        "projectPath": "C:\\Users\\ZasTa\\Desktop\\Workspace C#\\YouAreLate\\WebYouAreLate\\WebYouAreLate.csproj",
+        "packagesPath": "C:\\Users\\ZasTa\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ZasTa\\Desktop\\Workspace C#\\YouAreLate\\WebYouAreLate\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\ZasTa\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "C:\\Users\\ZasTa\\Desktop\\Workspace C#\\YouAreLate\\ModuleWebServiceLate\\ModuleWebServiceLate.csproj": {
+                "projectPath": "C:\\Users\\ZasTa\\Desktop\\Workspace C#\\YouAreLate\\ModuleWebServiceLate\\ModuleWebServiceLate.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -93,7 +163,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -35,6 +35,10 @@
     <Folder Include="Connected Services\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ModuleWebServiceLate\ModuleWebServiceLate.csproj" />
+  </ItemGroup>
+
 
 
 </Project>

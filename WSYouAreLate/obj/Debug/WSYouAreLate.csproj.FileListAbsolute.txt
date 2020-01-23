@@ -51,3 +51,27 @@ C:\Users\ZasTa\source\repos\YouAreLate\WSYouAreLate\bin\AutoMapper.dll
 C:\Users\ZasTa\source\repos\YouAreLate\WSYouAreLate\bin\AutoMapper.pdb
 C:\Users\ZasTa\source\repos\YouAreLate\WSYouAreLate\bin\AutoMapper.xml
 C:\Users\ZasTa\source\repos\YouAreLate\WSYouAreLate\obj\Debug\WSYouAreLate.csprojAssemblyReference.cache
+C:\Users\ZasTa\Desktop\Workspace C#\YouAreLate\WSYouAreLate\bin\WSYouAreLate.dll.config
+C:\Users\ZasTa\Desktop\Workspace C#\YouAreLate\WSYouAreLate\bin\WSYouAreLate.dll
+C:\Users\ZasTa\Desktop\Workspace C#\YouAreLate\WSYouAreLate\bin\WSYouAreLate.pdb
+C:\Users\ZasTa\Desktop\Workspace C#\YouAreLate\WSYouAreLate\bin\AutoMapper.dll
+C:\Users\ZasTa\Desktop\Workspace C#\YouAreLate\WSYouAreLate\bin\EntityFramework.dll
+C:\Users\ZasTa\Desktop\Workspace C#\YouAreLate\WSYouAreLate\bin\EntityFramework.SqlServer.dll
+C:\Users\ZasTa\Desktop\Workspace C#\YouAreLate\WSYouAreLate\bin\Google.Protobuf.dll
+C:\Users\ZasTa\Desktop\Workspace C#\YouAreLate\WSYouAreLate\bin\BouncyCastle.Crypto.dll
+C:\Users\ZasTa\Desktop\Workspace C#\YouAreLate\WSYouAreLate\bin\Ubiety.Dns.Core.dll
+C:\Users\ZasTa\Desktop\Workspace C#\YouAreLate\WSYouAreLate\bin\Renci.SshNet.dll
+C:\Users\ZasTa\Desktop\Workspace C#\YouAreLate\WSYouAreLate\bin\AutoMapper.pdb
+C:\Users\ZasTa\Desktop\Workspace C#\YouAreLate\WSYouAreLate\bin\AutoMapper.xml
+C:\Users\ZasTa\Desktop\Workspace C#\YouAreLate\WSYouAreLate\bin\EntityFramework.xml
+C:\Users\ZasTa\Desktop\Workspace C#\YouAreLate\WSYouAreLate\bin\EntityFramework.SqlServer.xml
+C:\Users\ZasTa\Desktop\Workspace C#\YouAreLate\WSYouAreLate\bin\MySql.Data.xml
+C:\Users\ZasTa\Desktop\Workspace C#\YouAreLate\WSYouAreLate\bin\MySql.Data.EntityFramework.xml
+C:\Users\ZasTa\Desktop\Workspace C#\YouAreLate\WSYouAreLate\bin\MySQL.Data.EntityFrameworkCore.xml
+C:\Users\ZasTa\Desktop\Workspace C#\YouAreLate\WSYouAreLate\bin\MySql.Web.xml
+C:\Users\ZasTa\Desktop\Workspace C#\YouAreLate\WSYouAreLate\obj\Debug\WSYouAreLate.csprojAssemblyReference.cache
+C:\Users\ZasTa\Desktop\Workspace C#\YouAreLate\WSYouAreLate\obj\Debug\WSYouAreLate.Properties.Settings.resources
+C:\Users\ZasTa\Desktop\Workspace C#\YouAreLate\WSYouAreLate\obj\Debug\WSYouAreLate.csproj.GenerateResource.cache
+C:\Users\ZasTa\Desktop\Workspace C#\YouAreLate\WSYouAreLate\obj\Debug\WSYouAreLate.csproj.CopyComplete
+C:\Users\ZasTa\Desktop\Workspace C#\YouAreLate\WSYouAreLate\obj\Debug\WSYouAreLate.dll
+C:\Users\ZasTa\Desktop\Workspace C#\YouAreLate\WSYouAreLate\obj\Debug\WSYouAreLate.pdb
