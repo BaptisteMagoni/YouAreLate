@@ -1,13 +1,14 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ModuleWebServiceLate.Service;
+using ServiceReferenceLate;
 
 namespace YouAreLate.Controllers
 {
     public class LoginController : Controller
     {
 
-        private LateService service = new LateService();
+        private LateService late = new LateService();
 
         // GET
         public IActionResult Index()
@@ -15,25 +16,16 @@ namespace YouAreLate.Controllers
             return View();
         }
 
-        public IActionResult Authentificate(IFormCollection collection)
+        public void Authentificate(IFormCollection collection)
         {
-
-            string login = collection["form-username"];
-            string password = collection["form-password"];
-
-            if(!string.IsNullOrEmpty(login) || !string.IsNullOrEmpty(password))
+            if (!string.IsNullOrEmpty(collection["username"]) && !string.IsNullOrEmpty(collection["password"]))
             {
-                if(service.AuthentificateUser(login, password) != null)
-                {
-                    return RedirectToAction("Home/Index");
-                }
-                else
-                {
-                    return RedirectToAction("Index");
-                }
-            }
-            return RedirectToAction("Index");
-        }
+                string username = collection["username"];
+                string password = collection["password"];
 
+                var user = late.AuthentificateUser(username, password);
+
+            }
+        }
     }
 }

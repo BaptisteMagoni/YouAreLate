@@ -2073,20 +2073,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ZasTa\\.nuget\\packages\\": {}
+    "C:\\Users\\ZasTa\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ZasTa\\Desktop\\Workspace C#\\YouAreLate\\WebYouAreLate\\WebYouAreLate.csproj",
+      "projectUniqueName": "C:\\Users\\ZasTa\\source\\repos\\YouAreLate\\WebYouAreLate\\WebYouAreLate.csproj",
       "projectName": "WebYouAreLate",
-      "projectPath": "C:\\Users\\ZasTa\\Desktop\\Workspace C#\\YouAreLate\\WebYouAreLate\\WebYouAreLate.csproj",
+      "projectPath": "C:\\Users\\ZasTa\\source\\repos\\YouAreLate\\WebYouAreLate\\WebYouAreLate.csproj",
       "packagesPath": "C:\\Users\\ZasTa\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ZasTa\\Desktop\\Workspace C#\\YouAreLate\\WebYouAreLate\\obj\\",
+      "outputPath": "C:\\Users\\ZasTa\\source\\repos\\YouAreLate\\WebYouAreLate\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Microsoft\\Xamarin\\NuGet\\"
+      ],
       "configFilePaths": [
         "C:\\Users\\ZasTa\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
@@ -2098,8 +2103,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\ZasTa\\Desktop\\Workspace C#\\YouAreLate\\ModuleWebServiceLate\\ModuleWebServiceLate.csproj": {
-              "projectPath": "C:\\Users\\ZasTa\\Desktop\\Workspace C#\\YouAreLate\\ModuleWebServiceLate\\ModuleWebServiceLate.csproj"
+            "C:\\Users\\ZasTa\\source\\repos\\YouAreLate\\ModuleWebServiceLate\\ModuleWebServiceLate.csproj": {
+              "projectPath": "C:\\Users\\ZasTa\\source\\repos\\YouAreLate\\ModuleWebServiceLate\\ModuleWebServiceLate.csproj"
             }
           }
         }
@@ -2164,7 +2169,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
       }
     }
   }
