@@ -31,7 +31,8 @@ namespace WSYouAreLate.DataAccess
             {
                 try
                 {
-                    return bdd.users.Where(x => x.identifiant == login && x.password == password).ToList().FirstOrDefault();
+                    var test = bdd.users.Where(x => x.identifiant == login && x.password == password).ToList().FirstOrDefault();
+                    return test;
                 }
                 catch
                 {

@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using WebYouAreLate.Models;
-
+using ModuleWebServiceLate.Service;
 namespace WebYouAreLate.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private LateService late = new LateService();
 
         public HomeController(ILogger<HomeController> logger)
         {

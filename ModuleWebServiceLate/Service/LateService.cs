@@ -5,10 +5,10 @@ using System.Text;
 
 namespace ModuleWebServiceLate.Service
 {
-    class LateService
+    public class LateService
     {
 
-        private ServiceReferenceLate.Service1Client service;
+        private Service1Client service;
 
         public LateService()
         {
