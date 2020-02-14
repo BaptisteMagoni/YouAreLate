@@ -166,6 +166,81 @@ namespace ServiceReferenceLate
     [System.Runtime.Serialization.DataContractAttribute(Name="LateTicketDTO", Namespace="http://schemas.datacontract.org/2004/07/WSYouAreLate.DTO")]
     public partial class LateTicketDTO : object
     {
+        
+        private string SubjectField;
+        
+        private System.DateTime datetimeField;
+        
+        private int idField;
+        
+        private int idUserField;
+        
+        private string imageField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Subject
+        {
+            get
+            {
+                return this.SubjectField;
+            }
+            set
+            {
+                this.SubjectField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime datetime
+        {
+            get
+            {
+                return this.datetimeField;
+            }
+            set
+            {
+                this.datetimeField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id
+        {
+            get
+            {
+                return this.idField;
+            }
+            set
+            {
+                this.idField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int idUser
+        {
+            get
+            {
+                return this.idUserField;
+            }
+            set
+            {
+                this.idUserField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string image
+        {
+            get
+            {
+                return this.imageField;
+            }
+            set
+            {
+                this.imageField = value;
+            }
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]

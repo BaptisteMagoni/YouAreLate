@@ -32,7 +32,11 @@ namespace WebYouAreLate.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            HomeModel home = new HomeModel
+            {
+                tickets = late.GetLateTickets()
+            };
+            return View(home);
         }
 
         public IActionResult Privacy()
