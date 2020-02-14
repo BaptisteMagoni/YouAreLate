@@ -12,14 +12,14 @@ namespace WSYouAreLate.ProfileAutoMapper
     {
         public LateProfile()
         {
-            CreateMap<users, UserDTO>();
-            CreateMap<UserDTO, users>();
+            CreateMap<Users, UserDTO>();
+            CreateMap<UserDTO, Users>();
 
-            CreateMap<users_late, UserLateDTO>();
-            CreateMap<UserLateDTO, users_late>();
+            CreateMap<UsersLate, UserLateDTO>();
+            CreateMap<UserLateDTO, UsersLate>();
 
-            CreateMap<lateticket, LateTicketDTO>();
-            CreateMap<LateTicketDTO, lateticket>();
+            CreateMap<LateTicket, LateTicketDTO>();
+            CreateMap<LateTicketDTO, LateTicket>();
         }
     }
 }

@@ -121,15 +121,15 @@
     <value>bdd_late</value>
   </data>
   <data name="DataSource" xml:space="preserve">
-    <value>127.0.0.1</value>
+    <value>51.15.198.145</value>
   </data>
   <data name="Password" xml:space="preserve">
-    <value />
+    <value>alexis</value>
   </data>
   <data name="Port" xml:space="preserve">
     <value>3306</value>
   </data>
   <data name="UserID" xml:space="preserve">
-    <value>root</value>
+    <value>alexis</value>
   </data>
 </root>

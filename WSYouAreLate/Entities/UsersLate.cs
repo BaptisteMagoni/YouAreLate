@@ -6,23 +6,23 @@ namespace WSYouAreLate.Entities
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("bdd_late.users_late")]
-    public partial class users_late
+    [Table("bdd_late.UsersLate")]
+    public partial class UsersLate
     {
         [Key]
         [Column(Order = 0)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int Idusers { get; set; }
+        public int iduser { get; set; }
 
         [Key]
         [Column(Order = 1)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int Idlate { get; set; }
+        public int idlate { get; set; }
 
-        public sbyte? Vote { get; set; }
+        public int? Vote { get; set; }
 
-        public virtual lateticket lateticket { get; set; }
+        public virtual LateTicket LateTicket { get; set; }
 
-        public virtual users users { get; set; }
+        public virtual Users Users { get; set; }
     }
 }

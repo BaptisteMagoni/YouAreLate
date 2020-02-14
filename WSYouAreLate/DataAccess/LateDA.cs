@@ -2,19 +2,21 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using WSYouAreLate.DTO;
 using WSYouAreLate.Entities;
 
 namespace WSYouAreLate.DataAccess
 {
     public class LateDA
     {
-        public List<users> GetUsers()
+        #region Users
+        public List<Users> GetUsers()
         {
             using(ModelLate bdd = new ModelLate())
             {
                 try
                 {
-                    var test = bdd.users.ToList();
+                    var test = bdd.Users.ToList();
                     return test;
                 }
                 catch
@@ -25,14 +27,13 @@ namespace WSYouAreLate.DataAccess
             }
         }
         
-        public users AuthentificateUser(string login, string password)
+        public Users AuthentificateUser(string login, string password)
         {
             using(ModelLate bdd = new ModelLate())
             {
                 try
                 {
-                    var test = bdd.users.Where(x => x.identifiant == login && x.password == password).ToList().FirstOrDefault();
-                    return test;
+                    return bdd.Users.Where(x => x.identifiant == login && x.password == password).ToList().FirstOrDefault();
                 }
                 catch
                 {
@@ -41,21 +42,96 @@ namespace WSYouAreLate.DataAccess
             }
         }
 
-        public users CreateUser(users users)
+        public Users CreateUser(Users users)
         {
             using(ModelLate bdd = new ModelLate())
             {
                 try
                 {
-                    bdd.users.Add(users);
+                    bdd.Users.Add(users);
                     bdd.SaveChanges();
                     return users;
                 }
-                catch
+                catch(Exception e)
                 {
                     return null;
                 }
             }
         }
+        #endregion
+
+        #region LateTicket
+
+        public List<LateTicket> GetLateTickets()
+        {
+
+            try
+            {
+                using(ModelLate bdd = new ModelLate())
+                {
+                    return bdd.LateTicket.ToList();
+                }
+            }
+            catch
+            {
+                return new List<LateTicket>();
+            }
+
+        }
+
+        public LateTicket DeleteLateTicket(LateTicket lateTicket)
+        {
+            try
+            {
+                using(ModelLate bdd = new ModelLate())
+                {
+                    LateTicket ticket = bdd.LateTicket.Remove(lateTicket);
+                    bdd.SaveChanges();
+                    return ticket;
+                }
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+        public LateTicket UpdateLateTicket(LateTicket lateTicket)
+        {
+            try
+            {
+                using(ModelLate bdd = new ModelLate())
+                {
+                    LateTicket ticket = bdd.LateTicket.Where(x => x.id == lateTicket.id).FirstOrDefault();
+                    ticket = bdd.LateTicket.Add(ticket);
+                    bdd.SaveChanges();
+                    return ticket;
+                }
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+        public LateTicket CreateLateTicket(LateTicket lateTicket)
+        {
+            try
+            {
+                using(ModelLate bdd = new ModelLate())
+                {
+                    LateTicket ticket = bdd.LateTicket.Add(lateTicket);
+                    bdd.SaveChanges();
+                    return ticket;
+                }
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+        #endregion
+
     }
 }

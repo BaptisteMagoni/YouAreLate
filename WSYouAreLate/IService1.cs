@@ -23,16 +23,16 @@ namespace WSYouAreLate
 
         // TODO: ajoutez vos opérations de service ici
 
-        #region User
+        #region Users
 
         [OperationContract]
         List<UserDTO> GetUser();
 
         [OperationContract]
-        users AuthentificateUser(string login, string password);
+        Users AuthentificateUser(string login, string password);
 
         [OperationContract]
-        UserDTO CreateUser(users user);
+        UserDTO CreateUser(UserDTO user);
 
         [OperationContract]
         void CreateCommentary();
@@ -41,31 +41,31 @@ namespace WSYouAreLate
         void DeleteCommentary();
         #endregion
 
-        #region LateNotification
+        #region LateTicket
 
         #region CRUD Notification
 
         [OperationContract]
-        void GetLateNotification();
+        List<LateTicketDTO> GetLateTickets();
 
         [OperationContract]
-        void DeleteLateNotification();
+        LateTicketDTO DeleteLateTicket(LateTicketDTO lateTicket);
 
         [OperationContract]
-        void UpdateLateNotification();
+        LateTicketDTO UpdateLateTicket(LateTicketDTO lateTicket);
 
         [OperationContract]
-        void CreateLateNotification();
+        LateTicketDTO CreateLateTicket(LateTicketDTO lateTicket);
 
         #endregion
 
         #region Option Notification
 
         [OperationContract]
-        void LikeLateNotification();
+        void LikeLateTicket(LateTicketDTO lateTicket);
 
         [OperationContract]
-        void DisLikeLateNotification();
+        void DisLikeLateTicket(LateTicketDTO lateTicketDTO);
 
         #endregion
 

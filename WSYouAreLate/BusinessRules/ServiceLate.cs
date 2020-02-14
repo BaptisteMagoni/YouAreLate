@@ -23,11 +23,13 @@ namespace WSYouAreLate.BusinessRules
             _lateDA = new LateDA();
         }
 
+        #region Users
+
         public List<UserDTO> GetUsers()
         {
             try
             {
-                List<users> users = _lateDA.GetUsers();
+                List<Users> users = _lateDA.GetUsers();
                 List<UserDTO> usersDTO = _mapper.Map<List<UserDTO>>(users);
                 return usersDTO;
             }
@@ -38,16 +40,75 @@ namespace WSYouAreLate.BusinessRules
             
         }
 
-        public users AuthentificationUser(string login, string password)
+        public Users AuthentificationUser(string login, string password)
         {
             return _lateDA.AuthentificateUser(login , password);
         }
 
-        public UserDTO CreateUser(users user)
+        public UserDTO CreateUser(UserDTO user)
         {
-            users u = _lateDA.CreateUser(user);
+            Users newUser = _mapper.Map<Users>(user);
+            Users u = _lateDA.CreateUser(newUser);
             UserDTO userDTO = _mapper.Map<UserDTO>(u);
             return userDTO;
         }
+
+        #endregion
+
+        #region LateTicket
+
+        public List<LateTicketDTO> GetLateTickets()
+        {
+            try
+            {
+                List<LateTicket> ticket = _lateDA.GetLateTickets();
+                return _mapper.Map<List<LateTicketDTO>>(ticket);
+            }
+            catch
+            {
+                return new List<LateTicketDTO>();
+            }
+        }
+
+        public LateTicketDTO DeleteLateTicket(LateTicketDTO lateTicket)
+        {
+            try
+            {
+                LateTicket ticket = _mapper.Map<LateTicket>(lateTicket);
+                return _mapper.Map<LateTicketDTO>(_lateDA.DeleteLateTicket(ticket));
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+        public LateTicketDTO UpdateLateTicket(LateTicketDTO lateTicket)
+        {
+            try
+            {
+                LateTicket ticket = _mapper.Map<LateTicket>(lateTicket);
+                return _mapper.Map<LateTicketDTO>(_lateDA.UpdateLateTicket(ticket));
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+        public LateTicketDTO CreateLateTicket(LateTicketDTO lateTicket)
+        {
+            try
+            {
+                LateTicket ticket = _mapper.Map<LateTicket>(lateTicket);
+                return _mapper.Map<LateTicketDTO>(_lateDA.CreateLateTicket(ticket));
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+        #endregion
     }
 }

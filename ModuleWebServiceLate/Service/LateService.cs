@@ -12,9 +12,10 @@ namespace ModuleWebServiceLate.Service
 
         public LateService()
         {
-            service = new ServiceReferenceLate.Service1Client();
+            service = new Service1Client();
         }
 
+        #region Users
 
         public List<UserDTO> GetUser()
         {
@@ -28,7 +29,7 @@ namespace ModuleWebServiceLate.Service
             }
         }
 
-        public users AuthentificateUser(string login, string password)
+        public Users AuthentificateUser(string login, string password)
         {
             try
             {
@@ -40,6 +41,70 @@ namespace ModuleWebServiceLate.Service
             }
         }
 
+        public UserDTO CreateUser(UserDTO user)
+        {
+            try
+            {
+                return service.CreateUser(user);
+            }
+            catch
+            {
+                return null;
+            }
+        }
 
+        #endregion
+
+        #region LateTicket
+
+        public List<LateTicketDTO> GetLateTickets()
+        {
+            try
+            {
+                return new List<LateTicketDTO>(service.GetLateTickets());
+            }
+            catch
+            {
+                return new List<LateTicketDTO>();
+            }
+        }
+
+        public LateTicketDTO UpdateLateTicket(LateTicketDTO lateTicket)
+        {
+            try
+            {
+                return service.UpdateLateTicket(lateTicket);
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+        public LateTicketDTO DeleteLateTicket(LateTicketDTO lateTicket)
+        {
+            try
+            {
+                return service.DeleteLateTicket(lateTicket);
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+        public LateTicketDTO CreateLateTicket(LateTicketDTO lateTicket)
+        {
+            try
+            {
+                return service.CreateLateTicket(lateTicket);
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+        #endregion
     }
 }

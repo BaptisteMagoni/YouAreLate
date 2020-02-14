@@ -105,10 +105,10 @@
     <Compile Include="DTO\LateTicketDTO.cs" />
     <Compile Include="DTO\UserDTO.cs" />
     <Compile Include="DTO\UserLateDTO.cs" />
-    <Compile Include="Entities\lateticket.cs" />
+    <Compile Include="Entities\LateTicket.cs" />
     <Compile Include="Entities\ModelLate.cs" />
-    <Compile Include="Entities\users.cs" />
-    <Compile Include="Entities\users_late.cs" />
+    <Compile Include="Entities\Users.cs" />
+    <Compile Include="Entities\UsersLate.cs" />
     <Compile Include="ProfileAutoMapper\LateProfile.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -154,7 +154,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>51194</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:51188/</IISUrl>
+          <IISUrl>http://localhost:50000/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

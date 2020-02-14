@@ -9,7 +9,12 @@ namespace WSYouAreLate.DTO
     public class UserDTO
     {
 
-        public int iduser { get; set; }
+        public UserDTO()
+        {
+            tickets = new List<LateTicketDTO>();
+        }
+
+        public int id { get; set; }
 
         public string firstname { get; set; }
 

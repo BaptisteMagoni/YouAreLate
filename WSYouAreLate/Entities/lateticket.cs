@@ -6,15 +6,16 @@ namespace WSYouAreLate.Entities
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("bdd_late.lateticket")]
-    public partial class lateticket
+    [Table("bdd_late.LateTicket")]
+    public partial class LateTicket
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public lateticket()
+        public LateTicket()
         {
-            users_late = new HashSet<users_late>();
+            UsersLate = new HashSet<UsersLate>();
         }
-
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int id { get; set; }
 
         public DateTime datetime { get; set; }
@@ -28,8 +29,8 @@ namespace WSYouAreLate.Entities
         public string image { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<users_late> users_late { get; set; }
+        public virtual ICollection<UsersLate> UsersLate { get; set; }
 
-        public virtual users users { get; set; }
+        public virtual Users Users { get; set; }
     }
 }

@@ -6,18 +6,19 @@ namespace WSYouAreLate.Entities
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("bdd_late.users")]
-    public partial class users
+    [Table("bdd_late.Users")]
+    public partial class Users
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public users()
+        public Users()
         {
-            lateticket = new HashSet<lateticket>();
-            users_late = new HashSet<users_late>();
+            LateTicket = new HashSet<LateTicket>();
+            UsersLate = new HashSet<UsersLate>();
         }
 
         [Key]
-        public int idusers { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int id { get; set; }
 
         [StringLength(45)]
         public string firstname { get; set; }
@@ -37,9 +38,9 @@ namespace WSYouAreLate.Entities
         public string classe { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<lateticket> lateticket { get; set; }
+        public virtual ICollection<LateTicket> LateTicket { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<users_late> users_late { get; set; }
+        public virtual ICollection<UsersLate> UsersLate { get; set; }
     }
 }

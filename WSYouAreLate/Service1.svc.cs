@@ -15,42 +15,6 @@ namespace WSYouAreLate
     // REMARQUE : pour lancer le client test WCF afin de tester ce service, sélectionnez Service1.svc ou Service1.svc.cs dans l'Explorateur de solutions et démarrez le débogage.
     public class Service1 : IService1
     {
-        public users AuthentificateUser(string login, string password)
-        {
-            ServiceLate service = new ServiceLate();
-            return service.AuthentificationUser(login, password);
-        }
-
-        public void CreateCommentary()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void CreateLateNotification()
-        {
-            throw new NotImplementedException();
-        }
-
-        public UserDTO CreateUser(users user)
-        {
-            ServiceLate service = new ServiceLate();
-            return service.CreateUser(user);
-        }
-
-        public void DeleteCommentary()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void DeleteLateNotification()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void DisLikeLateNotification()
-        {
-            throw new NotImplementedException();
-        }
 
         public string GetData(int value)
         {
@@ -70,25 +34,77 @@ namespace WSYouAreLate
             return composite;
         }
 
-        public void GetLateNotification()
+        #region Users
+
+        public Users AuthentificateUser(string login, string password)
         {
-            throw new NotImplementedException();
+            ServiceLate service = new ServiceLate();
+            return service.AuthentificationUser(login, password);
         }
 
         public List<UserDTO> GetUser()
         {
             ServiceLate service = new ServiceLate();
-            return  service.GetUsers();
+            return service.GetUsers();
         }
 
-        public void LikeLateNotification()
+        public UserDTO CreateUser(UserDTO user)
+        {
+            ServiceLate service = new ServiceLate();
+            return service.CreateUser(user);
+        }
+
+        #endregion
+
+        public void CreateCommentary()
         {
             throw new NotImplementedException();
         }
 
-        public void UpdateLateNotification()
+        public void DeleteCommentary()
         {
             throw new NotImplementedException();
         }
+
+        #region LateTicket
+
+        public List<LateTicketDTO> GetLateTickets()
+        {
+            ServiceLate service = new ServiceLate();
+            return service.GetLateTickets();
+
+        }
+
+        public LateTicketDTO DeleteLateTicket(LateTicketDTO lateTicket)
+        {
+            ServiceLate service = new ServiceLate();
+            return service.DeleteLateTicket(lateTicket);
+        }
+
+        public LateTicketDTO UpdateLateTicket(LateTicketDTO lateTicket)
+        {
+            ServiceLate service = new ServiceLate();
+            return service.UpdateLateTicket(lateTicket);
+        }
+
+        public LateTicketDTO CreateLateTicket(LateTicketDTO lateTicket)
+        {
+            ServiceLate service = new ServiceLate();
+            return service.CreateLateTicket(lateTicket);
+        }
+
+        #endregion
+
+        public void LikeLateTicket(LateTicketDTO lateTicket)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void DisLikeLateTicket(LateTicketDTO lateTicketDTO)
+        {
+            throw new NotImplementedException();
+        }
+
+
     }
 }
