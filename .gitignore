@@ -137,3 +137,11 @@ $RECYCLE.BIN/
 _NCrunch*
 *.cache
 *.cache
+*.cache
+*.cache
+*.cache
+*.json
+*.cache
+*.json
+*.props
+*.targets
