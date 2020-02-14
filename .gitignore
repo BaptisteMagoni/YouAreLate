@@ -145,3 +145,4 @@ _NCrunch*
 *.json
 *.props
 *.targets
+*.cache
