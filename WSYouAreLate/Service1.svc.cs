@@ -105,6 +105,27 @@ namespace WSYouAreLate
             throw new NotImplementedException();
         }
 
+        #region Links
+
+        public List<UserLateDTO> GetLinks()
+        {
+            ServiceLate service = new ServiceLate();
+            return service.GetLinks();
+        }
+
+        public UserLateDTO AddLinkUserToVote(UserLateDTO usersLate)
+        {
+            ServiceLate service = new ServiceLate();
+            return service.AddLinkUserToVote(usersLate);
+        }
+
+        public UserLateDTO DeleteLinkUserToVote(UserLateDTO usersLate)
+        {
+            ServiceLate service = new ServiceLate();
+            return service.DeleteLinkUserToVote(usersLate);
+        }
+
+        #endregion
 
     }
 }

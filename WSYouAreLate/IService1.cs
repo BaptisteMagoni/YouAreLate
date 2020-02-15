@@ -70,6 +70,19 @@ namespace WSYouAreLate
         #endregion
 
         #endregion
+
+        #region Link
+
+        [OperationContract]
+        List<UserLateDTO> GetLinks();
+
+        [OperationContract]
+        UserLateDTO AddLinkUserToVote(UserLateDTO usersLate);
+
+        [OperationContract]
+        UserLateDTO DeleteLinkUserToVote(UserLateDTO usersLate);
+
+        #endregion
     }
 
 

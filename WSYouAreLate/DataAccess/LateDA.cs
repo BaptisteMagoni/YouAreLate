@@ -133,5 +133,59 @@ namespace WSYouAreLate.DataAccess
 
         #endregion
 
+        #region UsersLate
+
+        public List<UsersLate> GetLinks()
+        {
+            try
+            {
+                using(ModelLate bdd = new ModelLate())
+                {
+                    return bdd.UsersLate.ToList();
+                }
+            }
+            catch
+            {
+                return new List<UsersLate>();
+            }
+        }
+
+        public UsersLate AddLinkUserToVote(UsersLate usersLate)
+        {
+
+            try
+            {
+                using(ModelLate bdd = new ModelLate())
+                {
+                    UsersLate link = bdd.UsersLate.Add(usersLate);
+                    bdd.SaveChanges();
+                    return link;
+
+                }
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+        public UsersLate DeleteLinkUserToVote(UsersLate usersLate)
+        {
+            try
+            {
+                using(ModelLate bdd = new ModelLate())
+                {
+                    UsersLate link = bdd.UsersLate.Remove(usersLate);
+                    bdd.SaveChanges();
+                    return link;
+                }
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+        #endregion
     }
 }

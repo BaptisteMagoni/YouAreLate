@@ -110,5 +110,26 @@ namespace WSYouAreLate.BusinessRules
         }
 
         #endregion
+
+        #region UsersLate
+
+        public List<UserLateDTO> GetLinks()
+        {
+            return _mapper.Map<List<UserLateDTO>>(_lateDA.GetLinks());
+        }
+
+        public UserLateDTO DeleteLinkUserToVote(UserLateDTO usersLate)
+        {
+            UsersLate link = _mapper.Map<UsersLate>(usersLate);
+            return _mapper.Map<UserLateDTO>(_lateDA.DeleteLinkUserToVote(link));
+        }
+
+        public UserLateDTO AddLinkUserToVote(UserLateDTO usersLate)
+        {
+            UsersLate link = _mapper.Map<UsersLate>(usersLate);
+            return _mapper.Map<UserLateDTO>(_lateDA.AddLinkUserToVote(link));
+        }
+
+        #endregion
     }
 }
