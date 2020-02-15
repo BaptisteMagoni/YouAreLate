@@ -106,5 +106,45 @@ namespace ModuleWebServiceLate.Service
         }
 
         #endregion
+
+        #region Links
+
+        public List<UserLateDTO> GetLinks()
+        {
+            try
+            {
+                return new List<UserLateDTO>(service.GetLinks());
+            }
+            catch
+            {
+                return new List<UserLateDTO>();
+            }
+        }
+
+        public UserLateDTO AddLinkUserToVote(UserLateDTO userLate)
+        {
+            try
+            {
+                return service.AddLinkUserToVote(userLate);
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+        public UserLateDTO DeleteLinkUserToVote(UserLateDTO userLate)
+        {
+            try
+            {
+                return service.DeleteLinkUserToVote(userLate);
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+        #endregion
     }
 }
