@@ -13,7 +13,6 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace WebYouAreLate.Controllers
 {
-    [Authorize]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -45,12 +44,9 @@ namespace WebYouAreLate.Controllers
                 newTicket.image = "UrlBidon";
                 newTicket.idUser = 1;
                 late.CreateLateTicket(newTicket);
-    
-
-
             }
         }
-
+        
         public IActionResult Index()
         {
             HomeModel home = new HomeModel

@@ -29,7 +29,7 @@ namespace ModuleWebServiceLate.Service
             }
         }
 
-        public Users AuthentificateUser(string login, string password)
+        public UserDTO AuthentificateUser(string login, string password)
         {
             try
             {

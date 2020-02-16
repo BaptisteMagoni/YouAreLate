@@ -36,7 +36,7 @@ namespace WSYouAreLate
 
         #region Users
 
-        public Users AuthentificateUser(string login, string password)
+        public UserDTO AuthentificateUser(string login, string password)
         {
             ServiceLate service = new ServiceLate();
             return service.AuthentificationUser(login, password);
@@ -119,6 +119,7 @@ namespace WSYouAreLate
         #endregion
 
         #endregion
+
         #region Links
 
         public List<UserLateDTO> GetLinks()

@@ -29,7 +29,7 @@ namespace WSYouAreLate
         List<UserDTO> GetUser();
 
         [OperationContract]
-        Users AuthentificateUser(string login, string password);
+        UserDTO AuthentificateUser(string login, string password);
 
         [OperationContract]
         UserDTO CreateUser(UserDTO user);
