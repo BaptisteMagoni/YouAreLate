@@ -29,7 +29,7 @@ namespace WebYouAreLate
             services.AddAuthentication("CookieAuth")
                 .AddCookie("CookieAuth", config =>
                 {
-                    config.Cookie.Name = "Grandmas.Cookie";
+                    config.Cookie.Name = "YouAreLate.Cookie";
                     config.LoginPath = "/Login/Index";
                 });
         }
@@ -52,15 +52,14 @@ namespace WebYouAreLate
 
             app.UseRouting();
 
+            app.UseAuthentication();
+
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Login}/{action=Index}/{id?}");
+                endpoints.MapDefaultControllerRoute();
             });
-
             app.UseAuthentication();
         }
     }
