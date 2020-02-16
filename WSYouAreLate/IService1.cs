@@ -33,17 +33,12 @@ namespace WSYouAreLate
 
         [OperationContract]
         UserDTO CreateUser(UserDTO user);
-
-        [OperationContract]
-        void CreateCommentary();
-
-        [OperationContract]
-        void DeleteCommentary();
+        
         #endregion
 
         #region LateTicket
 
-        #region CRUD Notification
+        #region CRUD
 
         [OperationContract]
         List<LateTicketDTO> GetLateTickets();
@@ -59,13 +54,23 @@ namespace WSYouAreLate
 
         #endregion
 
-        #region Option Notification
+        #region Vote
 
         [OperationContract]
-        void LikeLateTicket(LateTicketDTO lateTicket);
+        void LikeLateTicket(UserLateDTO usersLate);
 
         [OperationContract]
-        void DisLikeLateTicket(LateTicketDTO lateTicketDTO);
+        void DisLikeLateTicket(UserLateDTO usersLate);
+
+        #endregion
+
+        #region Commentary
+
+        [OperationContract]
+        void CreateCommentary();
+
+        [OperationContract]
+        void DeleteCommentary();
 
         #endregion
 

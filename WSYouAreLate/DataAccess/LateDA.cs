@@ -62,6 +62,8 @@ namespace WSYouAreLate.DataAccess
 
         #region LateTicket
 
+        #region CRUD
+
         public List<LateTicket> GetLateTickets()
         {
 
@@ -103,7 +105,8 @@ namespace WSYouAreLate.DataAccess
                 using(ModelLate bdd = new ModelLate())
                 {
                     LateTicket ticket = bdd.LateTicket.Where(x => x.id == lateTicket.id).FirstOrDefault();
-                    ticket = bdd.LateTicket.Add(ticket);
+                    ticket.image = lateTicket.image;
+                    ticket.Subject = lateTicket.Subject;
                     bdd.SaveChanges();
                     return ticket;
                 }
@@ -130,6 +133,58 @@ namespace WSYouAreLate.DataAccess
                 return null;
             }
         }
+
+        #endregion
+
+        #region Vote
+
+        public void LikeLateTicket(UsersLate usersLate)
+        {
+            try
+            {
+                using(ModelLate bdd = new ModelLate())
+                {
+                    UsersLate late = bdd.UsersLate.Where(x => x.iduser == usersLate.iduser && x.idlate == usersLate.idlate).FirstOrDefault();
+                    late.Vote = 1;
+                }
+            }
+            catch
+            {
+
+            }
+        }
+
+        public void DisLikeLateTicket(UsersLate usersLate)
+        {
+            try
+            {
+                using(ModelLate bdd = new ModelLate())
+                {
+                    UsersLate late = bdd.UsersLate.Where(x => x.iduser == usersLate.iduser && x.idlate == usersLate.idlate).FirstOrDefault();
+                    late.Vote = -1;
+                }
+            }
+            catch
+            {
+
+            }
+        }
+
+        #endregion
+
+        #region Commentary
+
+        public void CreateCommentary()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void DeleteCommentary()
+        {
+            throw new NotImplementedException();
+        }
+
+        #endregion
 
         #endregion
 

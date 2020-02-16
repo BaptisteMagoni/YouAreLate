@@ -57,6 +57,8 @@ namespace WSYouAreLate.BusinessRules
 
         #region LateTicket
 
+        #region CRUD
+
         public List<LateTicketDTO> GetLateTickets()
         {
             try
@@ -108,6 +110,52 @@ namespace WSYouAreLate.BusinessRules
                 return null;
             }
         }
+
+        #endregion
+
+        #region Vote
+
+        public void LikeLateTicket(UserLateDTO userLate)
+        {
+            try
+            {
+                UsersLate ticket = _mapper.Map<UsersLate>(userLate);
+                _lateDA.LikeLateTicket(ticket);
+            }
+            catch
+            {
+                throw new Exception();
+            }
+        }
+
+        public void DisLikeLateTicket(UserLateDTO userLate)
+        {
+            try
+            {
+                UsersLate ticket = _mapper.Map<UsersLate>(userLate);
+                _lateDA.DisLikeLateTicket(ticket);
+            }
+            catch
+            {
+                throw new Exception();
+            }
+        }
+
+        #endregion
+
+        #region Commentary
+
+        public void CreateCommentary()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void DeleteCommentary()
+        {
+            throw new NotImplementedException();
+        }
+
+        #endregion
 
         #endregion
 

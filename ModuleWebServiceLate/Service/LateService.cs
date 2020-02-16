@@ -57,6 +57,8 @@ namespace ModuleWebServiceLate.Service
 
         #region LateTicket
 
+        #region CRUD
+
         public List<LateTicketDTO> GetLateTickets()
         {
             try
@@ -104,6 +106,50 @@ namespace ModuleWebServiceLate.Service
                 return null;
             }
         }
+
+        #endregion
+
+        #region Vote
+
+        public void LikeLateTicket(UserLateDTO usersLate)
+        {
+            try
+            {
+                service.LikeLateTicket(usersLate);
+            }
+            catch
+            {
+
+            }
+        }
+
+        public void DisLikeLateTicket(UserLateDTO usersLate)
+        {
+            try
+            {
+                service.DisLikeLateTicket(usersLate);
+            }
+            catch
+            {
+
+            }
+        }
+
+        #endregion
+
+        #region Commentary
+
+        public void CreateCommentary()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void DeleteCommentary()
+        {
+            throw new NotImplementedException();
+        }
+
+        #endregion
 
         #endregion
 

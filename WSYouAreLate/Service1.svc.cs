@@ -56,23 +56,14 @@ namespace WSYouAreLate
 
         #endregion
 
-        public void CreateCommentary()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void DeleteCommentary()
-        {
-            throw new NotImplementedException();
-        }
-
         #region LateTicket
+
+        #region CRUD
 
         public List<LateTicketDTO> GetLateTickets()
         {
             ServiceLate service = new ServiceLate();
             return service.GetLateTickets();
-
         }
 
         public LateTicketDTO DeleteLateTicket(LateTicketDTO lateTicket)
@@ -95,16 +86,39 @@ namespace WSYouAreLate
 
         #endregion
 
-        public void LikeLateTicket(LateTicketDTO lateTicket)
+        #region Vote
+
+        public void LikeLateTicket(UserLateDTO userLate)
         {
-            throw new NotImplementedException();
+            ServiceLate service = new ServiceLate();
+            service.LikeLateTicket(userLate);
         }
 
-        public void DisLikeLateTicket(LateTicketDTO lateTicketDTO)
+        public void DisLikeLateTicket(UserLateDTO userLate)
         {
-            throw new NotImplementedException();
+            ServiceLate service = new ServiceLate();
+            service.DisLikeLateTicket(userLate);
         }
 
+        #endregion
+
+        #region Commentary
+
+        public void CreateCommentary()
+        {
+            ServiceLate service = new ServiceLate();
+            service.CreateCommentary();
+        }
+
+        public void DeleteCommentary()
+        {
+            ServiceLate service = new ServiceLate();
+            service.DeleteCommentary();
+        }
+
+        #endregion
+
+        #endregion
         #region Links
 
         public List<UserLateDTO> GetLinks()
