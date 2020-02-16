@@ -131,14 +131,3 @@ $RECYCLE.BIN/
 .DS_Store
 
 _NCrunch*
-*.lock
-*.config
-*.ide
-*.ide-shm
-*.ide-wal
-*.json
-*.json
-*.props
-*.targets
-*.cache
-WSYouAreLate/obj/Debug/*
