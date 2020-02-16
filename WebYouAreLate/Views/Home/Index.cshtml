@@ -14,6 +14,40 @@
         padding: 0.5rem;
     }
 </style>
+<div class="modal fade" id="lateModal" tabindex="-1" role="dialog" aria-labelledby="lateModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="lateModalLabel">Je suis en retard</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="@Url.Action("addLateTicket")" method="post">
+                    <div class="form-group">
+                        <input name="subject" type="text" placeholder="Pourquoi est-tu en retard ?" />
+                    </div>
+                    <div class="form-group">
+                        <label>Date :</label>
+                        <input type="datetime" name="date" value="@DateTime.Today.ToString("yyyy-MM-dd")" />
+                    </div>
+                    <div class="form-group">
+                        <label for="picture">Une Preuve ?</label>
+                        <input type="file" name="image" value="" accept="image/png, image/jpeg" />
+                    </div>
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 
 <div class="row">
     @foreach (var item in Model.tickets)
@@ -21,7 +55,7 @@
     <div class="card col-3">
         <img class="card-img-top" src="img/funny1.gif" alt="Card image cap">
         <div class="card-body">
-            Excuse 1 
+            @item.Subject
         </div>
         <div class="card-body">
             <form action="">

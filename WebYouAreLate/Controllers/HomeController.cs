@@ -7,8 +7,13 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using WebYouAreLate.Models;
 using ModuleWebServiceLate.Service;
+using Microsoft.AspNetCore.Http;
+using ServiceReferenceLate;
+using Microsoft.AspNetCore.Authorization;
+
 namespace WebYouAreLate.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -28,6 +33,22 @@ namespace WebYouAreLate.Controllers
         public void DownVote()
         {
             
+        }
+
+        public void addLateTicket(IFormCollection collection)
+        {
+            if (!string.IsNullOrEmpty(collection["form-username"]) && !string.IsNullOrEmpty(collection["form-password"]))
+            {
+                LateTicketDTO newTicket = new LateTicketDTO();
+                newTicket.Subject = collection["subject"];
+                newTicket.datetime = DateTime.Parse(collection["date"]);
+                newTicket.image = "UrlBidon";
+                newTicket.idUser = 1;
+                late.CreateLateTicket(newTicket);
+    
+
+
+            }
         }
 
         public IActionResult Index()
