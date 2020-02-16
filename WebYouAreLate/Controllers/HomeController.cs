@@ -13,6 +13,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace WebYouAreLate.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -33,7 +34,7 @@ namespace WebYouAreLate.Controllers
         {
             
         }
-
+        
         public void addLateTicket(IFormCollection collection)
         {
             if (!string.IsNullOrEmpty(collection["form-username"]) && !string.IsNullOrEmpty(collection["form-password"]))

@@ -34,26 +34,24 @@ namespace YouAreLate.Controllers
                 if (userDTO != null)
                 {
 
-                    var grandmaClaims = new List<Claim>
+                    var userClaims = new List<Claim>
                     {
-                        new Claim(ClaimTypes.Name, userDTO.identifiant),
-                        new Claim("Grandma.Says", "Suce ma bite")
+                        new Claim("UserID", userDTO.identifiant)
                     };
 
-                        var licenseClaims = new List<Claim>()
-                    {
-                        new Claim(ClaimTypes.Name, "Bob K Foo"),
-                        new Claim("DrinvingLicense", "A+"),
-                    };
+                    //    var licenseClaims = new List<Claim>()
+                    //{
+                    //    new Claim(ClaimTypes.Name, "Bob K Foo"),
+                    //    new Claim("DrinvingLicense", "A+"),
+                    //};
 
-                    var grandmaIdentity = new ClaimsIdentity(grandmaClaims, "Grandma Identity");
-                    var licenseIdentity = new ClaimsIdentity(licenseClaims, "Government");
+                    var userIdenity = new ClaimsIdentity(userClaims, "User Identity");
 
-                    var userPrincipal = new ClaimsPrincipal(new[] { grandmaIdentity, licenseIdentity });
+                    var userPrincipal = new ClaimsPrincipal(new[] { userIdenity });
 
                     HttpContext.SignInAsync(userPrincipal);
 
-                    return new RedirectResult("/Home");
+                    return Redirect("/Home");
                 }
 
             }
