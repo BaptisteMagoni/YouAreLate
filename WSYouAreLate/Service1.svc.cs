@@ -106,16 +106,16 @@ namespace WSYouAreLate
 
         #region CRUD
 
-        public int GetLikesLate(VoteDTO vote)
+        public int GetCountLikesLate(LateTicketDTO ticket)
         {
             ServiceLate service = new ServiceLate();
-            return service.GetLikesLate(vote);
+            return service.GetCountLikesLate(ticket);
         }
 
-        public int GetDisLikeLate(VoteDTO vote)
+        public int GetCountDisLikeLate(LateTicketDTO ticket)
         {
             ServiceLate service = new ServiceLate();
-            return service.GetDisLikeLate(vote);
+            return service.GetCountDisLikeLate(ticket);
         }
 
         public VoteDTO AddLinkUserToVote(VoteDTO usersLate)

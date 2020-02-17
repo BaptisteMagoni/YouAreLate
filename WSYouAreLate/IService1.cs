@@ -69,10 +69,10 @@ namespace WSYouAreLate
         #region CRUD
 
         [OperationContract]
-        int GetLikesLate(VoteDTO vote);
+        int GetCountLikesLate(LateTicketDTO ticket);
 
         [OperationContract]
-        int GetDisLikeLate(VoteDTO vote);
+        int GetCountDisLikeLate(LateTicketDTO ticket);
 
         [OperationContract]
         VoteDTO AddLinkUserToVote(VoteDTO usersLate);

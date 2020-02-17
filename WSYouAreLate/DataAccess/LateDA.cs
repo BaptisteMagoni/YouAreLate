@@ -179,13 +179,13 @@ namespace WSYouAreLate.DataAccess
 
         #region CRUD
 
-        public int GetLikesLate(UserVote vote)
+        public int GetCountLikesLate(LateTicket ticket)
         {
             try
             {
                 using (ModelLate bdd = new ModelLate())
                 {
-                    return bdd.UserVote.Where(x => x.idlate == vote.idlate && x.Vote == 1).Count();
+                    return bdd.UserVote.Where(x => x.idlate == ticket.id && x.Vote == 1).Count();
                 }
             }
             catch
@@ -194,13 +194,13 @@ namespace WSYouAreLate.DataAccess
             }
         }
 
-        public int GetDisLikeLate(UserVote vote)
+        public int GetCountDisLikeLate(LateTicket ticket)
         {
             try
             {
                 using (ModelLate bdd = new ModelLate())
                 {
-                    return bdd.UserVote.Where(x => x.idlate == vote.idlate && x.Vote == -1).Count();
+                    return bdd.UserVote.Where(x => x.idlate == ticket.id && x.Vote == -1).Count();
                 }
             }
             catch

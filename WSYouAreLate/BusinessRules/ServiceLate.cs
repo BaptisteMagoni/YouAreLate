@@ -147,15 +147,15 @@ namespace WSYouAreLate.BusinessRules
 
         #region CRUD
 
-        public int GetLikesLate(VoteDTO vote)
+        public int GetCountLikesLate(LateTicketDTO ticket)
         {
-            UserVote userVote = _mapper.Map<UserVote>(vote);
-            return _lateDA.GetLikesLate(userVote);
+            LateTicket userVote = _mapper.Map<LateTicket>(ticket);
+            return _lateDA.GetCountLikesLate(userVote);
         }
-        public int GetDisLikeLate(VoteDTO vote)
+        public int GetCountDisLikeLate(LateTicketDTO ticket)
         {
-            UserVote userVote = _mapper.Map<UserVote>(vote);
-            return _lateDA.GetDisLikeLate(userVote);
+            LateTicket late = _mapper.Map<LateTicket>(ticket);
+            return _lateDA.GetCountDisLikeLate(late);
         }
 
         public VoteDTO DeleteLinkUserToVote(VoteDTO vote)
