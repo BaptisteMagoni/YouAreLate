@@ -142,11 +142,11 @@ namespace ModuleWebServiceLate.Service
 
         #region CRUD
 
-        public int GetLikesLate(LateTicketDTO ticket)
+        public int GetLikesLate(VoteDTO vote)
         {
             try
             {
-                return service.GetCountLikesLate(ticket);
+                return service.GetLikesLate(vote);
             }
             catch
             {
@@ -154,11 +154,11 @@ namespace ModuleWebServiceLate.Service
             }
         }
 
-        public int GetDisLikeLate(LateTicketDTO ticket)
+        public int GetDisLikeLate(VoteDTO vote)
         {
             try
             {
-                return service.GetCountDisLikeLate(ticket);
+                return service.GetDisLikeLate(vote);
             }
             catch
             {

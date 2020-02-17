@@ -433,17 +433,17 @@ namespace ServiceReferenceLate
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DisLikeLateTicket", ReplyAction="http://tempuri.org/IService1/DisLikeLateTicketResponse")]
         System.Threading.Tasks.Task DisLikeLateTicketAsync(ServiceReferenceLate.VoteDTO usersLate);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetLikesLate", ReplyAction="http://tempuri.org/IService1/GetLikesLateResponse")]
-        int GetLikesLate(ServiceReferenceLate.VoteDTO vote);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetCountLikesLate", ReplyAction="http://tempuri.org/IService1/GetCountLikesLateResponse")]
+        int GetCountLikesLate(ServiceReferenceLate.LateTicketDTO ticket);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetLikesLate", ReplyAction="http://tempuri.org/IService1/GetLikesLateResponse")]
-        System.Threading.Tasks.Task<int> GetLikesLateAsync(ServiceReferenceLate.VoteDTO vote);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetCountLikesLate", ReplyAction="http://tempuri.org/IService1/GetCountLikesLateResponse")]
+        System.Threading.Tasks.Task<int> GetCountLikesLateAsync(ServiceReferenceLate.LateTicketDTO ticket);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetDisLikeLate", ReplyAction="http://tempuri.org/IService1/GetDisLikeLateResponse")]
-        int GetDisLikeLate(ServiceReferenceLate.VoteDTO vote);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetCountDisLikeLate", ReplyAction="http://tempuri.org/IService1/GetCountDisLikeLateResponse")]
+        int GetCountDisLikeLate(ServiceReferenceLate.LateTicketDTO ticket);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetDisLikeLate", ReplyAction="http://tempuri.org/IService1/GetDisLikeLateResponse")]
-        System.Threading.Tasks.Task<int> GetDisLikeLateAsync(ServiceReferenceLate.VoteDTO vote);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetCountDisLikeLate", ReplyAction="http://tempuri.org/IService1/GetCountDisLikeLateResponse")]
+        System.Threading.Tasks.Task<int> GetCountDisLikeLateAsync(ServiceReferenceLate.LateTicketDTO ticket);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddLinkUserToVote", ReplyAction="http://tempuri.org/IService1/AddLinkUserToVoteResponse")]
         ServiceReferenceLate.VoteDTO AddLinkUserToVote(ServiceReferenceLate.VoteDTO usersLate);
@@ -630,24 +630,24 @@ namespace ServiceReferenceLate
             return base.Channel.DisLikeLateTicketAsync(usersLate);
         }
         
-        public int GetLikesLate(ServiceReferenceLate.VoteDTO vote)
+        public int GetCountLikesLate(ServiceReferenceLate.LateTicketDTO ticket)
         {
-            return base.Channel.GetLikesLate(vote);
+            return base.Channel.GetCountLikesLate(ticket);
         }
         
-        public System.Threading.Tasks.Task<int> GetLikesLateAsync(ServiceReferenceLate.VoteDTO vote)
+        public System.Threading.Tasks.Task<int> GetCountLikesLateAsync(ServiceReferenceLate.LateTicketDTO ticket)
         {
-            return base.Channel.GetLikesLateAsync(vote);
+            return base.Channel.GetCountLikesLateAsync(ticket);
         }
         
-        public int GetDisLikeLate(ServiceReferenceLate.VoteDTO vote)
+        public int GetCountDisLikeLate(ServiceReferenceLate.LateTicketDTO ticket)
         {
-            return base.Channel.GetDisLikeLate(vote);
+            return base.Channel.GetCountDisLikeLate(ticket);
         }
         
-        public System.Threading.Tasks.Task<int> GetDisLikeLateAsync(ServiceReferenceLate.VoteDTO vote)
+        public System.Threading.Tasks.Task<int> GetCountDisLikeLateAsync(ServiceReferenceLate.LateTicketDTO ticket)
         {
-            return base.Channel.GetDisLikeLateAsync(vote);
+            return base.Channel.GetCountDisLikeLateAsync(ticket);
         }
         
         public ServiceReferenceLate.VoteDTO AddLinkUserToVote(ServiceReferenceLate.VoteDTO usersLate)
