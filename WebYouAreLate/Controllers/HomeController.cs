@@ -24,28 +24,34 @@ namespace WebYouAreLate.Controllers
             _logger = logger;
         }
 
-        public void UpVote(int idLate)
+        public IActionResult UpVote()
         {
-
+            
             var idUser = User.Claims.Where(x => x.Type == "UserID").FirstOrDefault().Value;
-
+            object idTicket = null;
+            HttpContext.Request.RouteValues.TryGetValue("id", out idTicket);
             VoteDTO vote = new VoteDTO() {
-                idlate = idLate,
+                idlate = Int32.Parse(idTicket.ToString()),
                 iduser = Int32.Parse(idUser)
             };
             late.LikeLateTicket(vote);
+            return RedirectToAction("Index");
         }
 
-        public void DownVote(int idLate)
+        public IActionResult DownVote(int idLate)
         {
             var idUser = User.Claims.Where(x => x.Type == "UserID").FirstOrDefault().Value;
+            object idTicket = null;
+            HttpContext.Request.RouteValues.TryGetValue("id", out idTicket);
             VoteDTO vote = new VoteDTO()
             {
-                idlate = idLate,
+                idlate = Int32.Parse(idTicket.ToString()),
                 iduser = Int32.Parse(idUser)
             };
             late.DisLikeLateTicket(vote);
+            return RedirectToAction("Index");
         }
+    
         
         public void addLateTicket(IFormCollection collection)
         {

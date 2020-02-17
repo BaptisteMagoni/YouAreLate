@@ -58,9 +58,8 @@
             @item.Subject
         </div>
         <div class="card-body">
-            <form action="">
-                <a href="#" data-value="0" data-url="/Home/UpVote/0"><img src="img/icons/clap.svg" alt="Bien joué Nils" style="width: 32px;" data-toggle="tooltip" data-placement="top" title="<img src='img/clap.gif'>"></a>
-                <a href="#" data-value="0"><img src="img/icons/hit.svg" alt="Va bosser !" style="width: 32px;" data-toggle="tooltip" data-placement="top" title="<img src='img/slap.gif'>"></a></form>
+                <a href="/Home/UpVote/@item.id" ><img src="img/icons/clap.svg" alt="Bien joué Nils" style="width: 32px;" data-toggle="tooltip" data-placement="top" title="<img src='img/clap.gif'>"></a>
+                <a href="/Home/DownVote/@item.id" ><img src="img/icons/hit.svg" alt="Va bosser !" style="width: 32px;" data-toggle="tooltip" data-placement="top" title="<img src='img/slap.gif'>"></a>
         </div>
     </div>
     }
