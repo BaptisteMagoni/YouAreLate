@@ -147,8 +147,8 @@ namespace WSYouAreLate.DataAccess
             {
                 using(ModelLate bdd = new ModelLate())
                 {
-                    UserVote late = bdd.UserVote.Where(x => x.iduser == usersLate.iduser && x.idlate == usersLate.idlate).FirstOrDefault();
-                    late.Vote = 1;
+                    usersLate.Vote = 1;
+                    UserVote late = bdd.UserVote.Add(usersLate);
                     bdd.SaveChanges();
                 }
             }
@@ -164,8 +164,8 @@ namespace WSYouAreLate.DataAccess
             {
                 using(ModelLate bdd = new ModelLate())
                 {
-                    UserVote late = bdd.UserVote.Where(x => x.iduser == usersLate.iduser && x.idlate == usersLate.idlate).FirstOrDefault();
-                    late.Vote = -1;
+                    usersLate.Vote = -1;
+                    UserVote late = bdd.UserVote.Add(usersLate);
                     bdd.SaveChanges();
                 }
             }
