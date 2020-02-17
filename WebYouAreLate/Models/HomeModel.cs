@@ -11,5 +11,6 @@ namespace WebYouAreLate.Models
 
         public List<LateTicketDTO> tickets { get; set; }
 
+        public List<VoteDTO> votes { get; set; }
     }
 }
