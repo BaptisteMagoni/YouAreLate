@@ -142,7 +142,7 @@ namespace ModuleWebServiceLate.Service
 
         #region CRUD
 
-        public int GetLikesLate(LateTicketDTO ticket)
+        public int GetCountLikesLate(LateTicketDTO ticket)
         {
             try
             {
@@ -154,7 +154,7 @@ namespace ModuleWebServiceLate.Service
             }
         }
 
-        public int GetDisLikeLate(LateTicketDTO ticket)
+        public int GetCountDisLikeLate(LateTicketDTO ticket)
         {
             try
             {
