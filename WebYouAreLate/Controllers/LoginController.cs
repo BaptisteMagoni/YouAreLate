@@ -36,16 +36,11 @@ namespace YouAreLate.Controllers
 
                     var userClaims = new List<Claim>
                     {
-                        new Claim("UserID", userDTO.identifiant)
+                        new Claim("UserID", userDTO.id.ToString()),
+                        new Claim("UserName", userDTO.identifiant)
                     };
 
-                    //    var licenseClaims = new List<Claim>()
-                    //{
-                    //    new Claim(ClaimTypes.Name, "Bob K Foo"),
-                    //    new Claim("DrinvingLicense", "A+"),
-                    //};
-
-                    var userIdenity = new ClaimsIdentity(userClaims, "User Identity");
+                    var userIdenity = new ClaimsIdentity(userClaims, "userIdentity");
 
                     var userPrincipal = new ClaimsPrincipal(new[] { userIdenity });
 

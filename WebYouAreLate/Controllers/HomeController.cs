@@ -24,15 +24,27 @@ namespace WebYouAreLate.Controllers
             _logger = logger;
         }
 
-        public ActionResult UpVote(int idLate)
+        public void UpVote(int idLate)
         {
-            System.Diagnostics.Debug.WriteLine(idLate.ToString());
-            return RedirectToAction("Index");
+
+            var idUser = User.Claims.Where(x => x.Type == "UserID").FirstOrDefault().Value;
+
+            VoteDTO vote = new VoteDTO() {
+                idlate = idLate,
+                iduser = Int32.Parse(idUser)
+            };
+            late.LikeLateTicket(vote);
         }
 
-        public void DownVote()
+        public void DownVote(int idLate)
         {
-            
+            var idUser = User.Claims.Where(x => x.Type == "UserID").FirstOrDefault().Value;
+            VoteDTO vote = new VoteDTO()
+            {
+                idlate = idLate,
+                iduser = Int32.Parse(idUser)
+            };
+            late.DisLikeLateTicket(vote);
         }
         
         public void addLateTicket(IFormCollection collection)
