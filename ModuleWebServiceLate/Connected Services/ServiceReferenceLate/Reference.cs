@@ -177,6 +177,8 @@ namespace ServiceReferenceLate
         
         private string imageField;
         
+        private int meriteField;
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string Subject
         {
@@ -239,6 +241,19 @@ namespace ServiceReferenceLate
             set
             {
                 this.imageField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int merite
+        {
+            get
+            {
+                return this.meriteField;
+            }
+            set
+            {
+                this.meriteField = value;
             }
         }
     }
