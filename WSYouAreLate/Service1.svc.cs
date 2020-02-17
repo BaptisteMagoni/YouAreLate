@@ -88,13 +88,15 @@ namespace WSYouAreLate
 
         #region Vote
 
-        public void LikeLateTicket(UserLateDTO userLate)
+        #region Like && DisLike
+
+        public void LikeLateTicket(VoteDTO userLate)
         {
             ServiceLate service = new ServiceLate();
             service.LikeLateTicket(userLate);
         }
 
-        public void DisLikeLateTicket(UserLateDTO userLate)
+        public void DisLikeLateTicket(VoteDTO userLate)
         {
             ServiceLate service = new ServiceLate();
             service.DisLikeLateTicket(userLate);
@@ -102,43 +104,51 @@ namespace WSYouAreLate
 
         #endregion
 
-        #region Commentary
+        #region CRUD
 
-        public void CreateCommentary()
+        public int GetLikesLate(VoteDTO vote)
         {
             ServiceLate service = new ServiceLate();
-            service.CreateCommentary();
+            return service.GetLikesLate(vote);
         }
 
-        public void DeleteCommentary()
+        public int GetDisLikeLate(VoteDTO vote)
         {
             ServiceLate service = new ServiceLate();
-            service.DeleteCommentary();
+            return service.GetDisLikeLate(vote);
         }
 
-        #endregion
-
-        #endregion
-
-        #region Links
-
-        public List<UserLateDTO> GetLinks()
-        {
-            ServiceLate service = new ServiceLate();
-            return service.GetLinks();
-        }
-
-        public UserLateDTO AddLinkUserToVote(UserLateDTO usersLate)
+        public VoteDTO AddLinkUserToVote(VoteDTO usersLate)
         {
             ServiceLate service = new ServiceLate();
             return service.AddLinkUserToVote(usersLate);
         }
 
-        public UserLateDTO DeleteLinkUserToVote(UserLateDTO usersLate)
+        public VoteDTO DeleteLinkUserToVote(VoteDTO usersLate)
         {
             ServiceLate service = new ServiceLate();
             return service.DeleteLinkUserToVote(usersLate);
         }
+
+        #endregion
+
+        #endregion
+
+        #region Commentary
+
+        public CommentaryDTO CreateCommentary(CommentaryDTO commentary)
+        {
+            ServiceLate service = new ServiceLate();
+            return service.CreateCommentary(commentary);
+        }
+
+        public void DeleteCommentary(CommentaryDTO commentary)
+        {
+            ServiceLate service = new ServiceLate();
+            service.DeleteCommentary(commentary);
+        }
+
+        #endregion
 
         #endregion
 

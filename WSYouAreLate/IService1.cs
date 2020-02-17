@@ -56,36 +56,42 @@ namespace WSYouAreLate
 
         #region Vote
 
-        [OperationContract]
-        void LikeLateTicket(UserLateDTO usersLate);
+        #region Like && DisLike
 
         [OperationContract]
-        void DisLikeLateTicket(UserLateDTO usersLate);
+        void LikeLateTicket(VoteDTO usersLate);
+
+        [OperationContract]
+        void DisLikeLateTicket(VoteDTO usersLate);
+
+        #endregion
+
+        #region CRUD
+
+        [OperationContract]
+        int GetLikesLate(VoteDTO vote);
+
+        [OperationContract]
+        int GetDisLikeLate(VoteDTO vote);
+
+        [OperationContract]
+        VoteDTO AddLinkUserToVote(VoteDTO usersLate);
+
+        [OperationContract]
+        VoteDTO DeleteLinkUserToVote(VoteDTO usersLate);
+        #endregion
 
         #endregion
 
         #region Commentary
 
         [OperationContract]
-        void CreateCommentary();
+        CommentaryDTO CreateCommentary(CommentaryDTO commentary);
 
         [OperationContract]
-        void DeleteCommentary();
+        void DeleteCommentary(CommentaryDTO commentary);
 
         #endregion
-
-        #endregion
-
-        #region Link
-
-        [OperationContract]
-        List<UserLateDTO> GetLinks();
-
-        [OperationContract]
-        UserLateDTO AddLinkUserToVote(UserLateDTO usersLate);
-
-        [OperationContract]
-        UserLateDTO DeleteLinkUserToVote(UserLateDTO usersLate);
 
         #endregion
     }

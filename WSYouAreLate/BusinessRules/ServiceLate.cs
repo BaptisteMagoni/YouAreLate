@@ -115,12 +115,14 @@ namespace WSYouAreLate.BusinessRules
 
         #region Vote
 
-        public void LikeLateTicket(UserLateDTO userLate)
+        #region Like && DisLike
+
+        public void LikeLateTicket(VoteDTO voteDTO)
         {
             try
             {
-                UsersLate ticket = _mapper.Map<UsersLate>(userLate);
-                _lateDA.LikeLateTicket(ticket);
+                UserVote vote = _mapper.Map<UserVote>(voteDTO);
+                _lateDA.LikeLateTicket(vote);
             }
             catch
             {
@@ -128,11 +130,11 @@ namespace WSYouAreLate.BusinessRules
             }
         }
 
-        public void DisLikeLateTicket(UserLateDTO userLate)
+        public void DisLikeLateTicket(VoteDTO userLate)
         {
             try
             {
-                UsersLate ticket = _mapper.Map<UsersLate>(userLate);
+                UserVote ticket = _mapper.Map<UserVote>(userLate);
                 _lateDA.DisLikeLateTicket(ticket);
             }
             catch
@@ -143,40 +145,65 @@ namespace WSYouAreLate.BusinessRules
 
         #endregion
 
+        #region CRUD
+
+        public int GetLikesLate(VoteDTO vote)
+        {
+            UserVote userVote = _mapper.Map<UserVote>(vote);
+            return _lateDA.GetLikesLate(userVote);
+        }
+        public int GetDisLikeLate(VoteDTO vote)
+        {
+            UserVote userVote = _mapper.Map<UserVote>(vote);
+            return _lateDA.GetDisLikeLate(userVote);
+        }
+
+        public VoteDTO DeleteLinkUserToVote(VoteDTO vote)
+        {
+            UserVote link = _mapper.Map<UserVote>(vote);
+            return _mapper.Map<VoteDTO>(_lateDA.DeleteLinkUserToVote(link));
+        }
+
+        public VoteDTO AddLinkUserToVote(VoteDTO vote)
+        {
+            UserVote link = _mapper.Map<UserVote>(vote);
+            return _mapper.Map<VoteDTO>(_lateDA.AddLinkUserToVote(link));
+        }
+
+
+        #endregion
+
+        #endregion
+
         #region Commentary
 
-        public void CreateCommentary()
+        public CommentaryDTO CreateCommentary(CommentaryDTO commentary)
         {
-            throw new NotImplementedException();
+            try
+            {
+                Commentary comment = _mapper.Map<Commentary>(commentary);
+                return _mapper.Map<CommentaryDTO>(_lateDA.CreateCommentary(comment));
+            }
+            catch
+            {
+                return null;
+            }
         }
 
-        public void DeleteCommentary()
+        public void DeleteCommentary(CommentaryDTO commentary)
         {
-            throw new NotImplementedException();
+            try
+            {
+                Commentary comment = _mapper.Map<Commentary>(commentary);
+                _lateDA.DeleteCommentary(comment);
+            }
+            catch
+            {
+                throw new Exception();
+            }
         }
 
         #endregion
-
-        #endregion
-
-        #region UsersLate
-
-        public List<UserLateDTO> GetLinks()
-        {
-            return _mapper.Map<List<UserLateDTO>>(_lateDA.GetLinks());
-        }
-
-        public UserLateDTO DeleteLinkUserToVote(UserLateDTO usersLate)
-        {
-            UsersLate link = _mapper.Map<UsersLate>(usersLate);
-            return _mapper.Map<UserLateDTO>(_lateDA.DeleteLinkUserToVote(link));
-        }
-
-        public UserLateDTO AddLinkUserToVote(UserLateDTO usersLate)
-        {
-            UsersLate link = _mapper.Map<UsersLate>(usersLate);
-            return _mapper.Map<UserLateDTO>(_lateDA.AddLinkUserToVote(link));
-        }
 
         #endregion
     }

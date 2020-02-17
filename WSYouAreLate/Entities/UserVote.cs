@@ -6,8 +6,8 @@ namespace WSYouAreLate.Entities
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("bdd_late.UsersLate")]
-    public partial class UsersLate
+    [Table("bdd_late.UserVote")]
+    public partial class UserVote
     {
         [Key]
         [Column(Order = 0)]

@@ -18,18 +18,6 @@ namespace ModuleWebServiceLate.Service
 
         #region Users
 
-        public List<UserDTO> GetUser()
-        {
-            try
-            {
-                return new List<UserDTO>(service.GetUser());
-            }
-            catch
-            {
-                return null;
-            }
-        }
-
         public UserDTO AuthentificateUser(string login, string password)
         {
             try
@@ -39,6 +27,18 @@ namespace ModuleWebServiceLate.Service
             catch
             {
                 return null;
+            }
+        }
+
+        public List<UserDTO> GetUser()
+        {
+            try
+            {
+                return new List<UserDTO>(service.GetUser());
+            }
+            catch
+            {
+                return new List<UserDTO>();
             }
         }
 
@@ -68,18 +68,6 @@ namespace ModuleWebServiceLate.Service
             }
             catch
             {
-                return new List<LateTicketDTO>();
-            }
-        }
-
-        public LateTicketDTO UpdateLateTicket(LateTicketDTO lateTicket)
-        {
-            try
-            {
-                return service.UpdateLateTicket(lateTicket);
-            }
-            catch
-            {
                 return null;
             }
         }
@@ -89,6 +77,18 @@ namespace ModuleWebServiceLate.Service
             try
             {
                 return service.DeleteLateTicket(lateTicket);
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+        public LateTicketDTO UpdateLateTicket(LateTicketDTO lateTicket)
+        {
+            try
+            {
+                return service.UpdateLateTicket(lateTicket);
             }
             catch
             {
@@ -112,67 +112,95 @@ namespace ModuleWebServiceLate.Service
 
         #region Vote
 
-        public void LikeLateTicket(UserLateDTO usersLate)
+        #region Like && DisLike
+
+        public void LikeLateTicket(VoteDTO vote)
         {
             try
             {
-                service.LikeLateTicket(usersLate);
+                service.LikeLateTicket(vote);
             }
             catch
             {
-
+                throw new Exception();
             }
         }
 
-        public void DisLikeLateTicket(UserLateDTO usersLate)
+        public void DisLikeLateTicket(VoteDTO vote)
         {
             try
             {
-                service.DisLikeLateTicket(usersLate);
+                service.DisLikeLateTicket(vote);
             }
             catch
             {
-
+                throw new Exception();
             }
         }
+
+        #endregion
+
+        #region CRUD
+
+        public int GetLikesLate(VoteDTO vote)
+        {
+            try
+            {
+                return service.GetLikesLate(vote);
+            }
+            catch
+            {
+                return -1;
+            }
+        }
+
+        public int GetDisLikeLate(VoteDTO vote)
+        {
+            try
+            {
+                return service.GetDisLikeLate(vote);
+            }
+            catch
+            {
+                return -1;
+            }
+        }
+
+        public VoteDTO AddLinkUserToVote(VoteDTO vote)
+        {
+            try
+            {
+                return service.AddLinkUserToVote(vote);
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+        public VoteDTO DeleteLinkUserToVote(VoteDTO vote)
+        {
+            try
+            {
+                return service.DeleteLinkUserToVote(vote);
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+        #endregion
 
         #endregion
 
         #region Commentary
 
-        public void CreateCommentary()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void DeleteCommentary()
-        {
-            throw new NotImplementedException();
-        }
-
-        #endregion
-
-        #endregion
-
-        #region Links
-
-        public List<UserLateDTO> GetLinks()
+        public CommentaryDTO CreateCommentary(CommentaryDTO commentary)
         {
             try
             {
-                return new List<UserLateDTO>(service.GetLinks());
-            }
-            catch
-            {
-                return new List<UserLateDTO>();
-            }
-        }
-
-        public UserLateDTO AddLinkUserToVote(UserLateDTO userLate)
-        {
-            try
-            {
-                return service.AddLinkUserToVote(userLate);
+                return service.CreateCommentary(commentary);
             }
             catch
             {
@@ -180,18 +208,20 @@ namespace ModuleWebServiceLate.Service
             }
         }
 
-        public UserLateDTO DeleteLinkUserToVote(UserLateDTO userLate)
+        public void DeleteCommentary(CommentaryDTO commentary)
         {
             try
             {
-                return service.DeleteLinkUserToVote(userLate);
+                service.DeleteCommentary(commentary);
             }
             catch
             {
-                return null;
+                throw new Exception();
             }
         }
 
+        #endregion
+        
         #endregion
     }
 }

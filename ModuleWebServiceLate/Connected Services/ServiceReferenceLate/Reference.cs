@@ -245,9 +245,121 @@ namespace ServiceReferenceLate
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="UserLateDTO", Namespace="http://schemas.datacontract.org/2004/07/WSYouAreLate.DTO")]
-    public partial class UserLateDTO : object
+    [System.Runtime.Serialization.DataContractAttribute(Name="VoteDTO", Namespace="http://schemas.datacontract.org/2004/07/WSYouAreLate.DTO")]
+    public partial class VoteDTO : object
     {
+        
+        private System.Nullable<int> VoteField;
+        
+        private int idlateField;
+        
+        private int iduserField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> Vote
+        {
+            get
+            {
+                return this.VoteField;
+            }
+            set
+            {
+                this.VoteField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int idlate
+        {
+            get
+            {
+                return this.idlateField;
+            }
+            set
+            {
+                this.idlateField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int iduser
+        {
+            get
+            {
+                return this.iduserField;
+            }
+            set
+            {
+                this.iduserField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CommentaryDTO", Namespace="http://schemas.datacontract.org/2004/07/WSYouAreLate.DTO")]
+    public partial class CommentaryDTO : object
+    {
+        
+        private System.DateTime dateField;
+        
+        private int idlateField;
+        
+        private int iduserField;
+        
+        private string messageField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime date
+        {
+            get
+            {
+                return this.dateField;
+            }
+            set
+            {
+                this.dateField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int idlate
+        {
+            get
+            {
+                return this.idlateField;
+            }
+            set
+            {
+                this.idlateField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int iduser
+        {
+            get
+            {
+                return this.iduserField;
+            }
+            set
+            {
+                this.iduserField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string message
+        {
+            get
+            {
+                return this.messageField;
+            }
+            set
+            {
+                this.messageField = value;
+            }
+        }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
@@ -310,46 +422,52 @@ namespace ServiceReferenceLate
         System.Threading.Tasks.Task<ServiceReferenceLate.LateTicketDTO> CreateLateTicketAsync(ServiceReferenceLate.LateTicketDTO lateTicket);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/LikeLateTicket", ReplyAction="http://tempuri.org/IService1/LikeLateTicketResponse")]
-        void LikeLateTicket(ServiceReferenceLate.UserLateDTO usersLate);
+        void LikeLateTicket(ServiceReferenceLate.VoteDTO usersLate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/LikeLateTicket", ReplyAction="http://tempuri.org/IService1/LikeLateTicketResponse")]
-        System.Threading.Tasks.Task LikeLateTicketAsync(ServiceReferenceLate.UserLateDTO usersLate);
+        System.Threading.Tasks.Task LikeLateTicketAsync(ServiceReferenceLate.VoteDTO usersLate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DisLikeLateTicket", ReplyAction="http://tempuri.org/IService1/DisLikeLateTicketResponse")]
-        void DisLikeLateTicket(ServiceReferenceLate.UserLateDTO usersLate);
+        void DisLikeLateTicket(ServiceReferenceLate.VoteDTO usersLate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DisLikeLateTicket", ReplyAction="http://tempuri.org/IService1/DisLikeLateTicketResponse")]
-        System.Threading.Tasks.Task DisLikeLateTicketAsync(ServiceReferenceLate.UserLateDTO usersLate);
+        System.Threading.Tasks.Task DisLikeLateTicketAsync(ServiceReferenceLate.VoteDTO usersLate);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/CreateCommentary", ReplyAction="http://tempuri.org/IService1/CreateCommentaryResponse")]
-        void CreateCommentary();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetLikesLate", ReplyAction="http://tempuri.org/IService1/GetLikesLateResponse")]
+        int GetLikesLate(ServiceReferenceLate.VoteDTO vote);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/CreateCommentary", ReplyAction="http://tempuri.org/IService1/CreateCommentaryResponse")]
-        System.Threading.Tasks.Task CreateCommentaryAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetLikesLate", ReplyAction="http://tempuri.org/IService1/GetLikesLateResponse")]
+        System.Threading.Tasks.Task<int> GetLikesLateAsync(ServiceReferenceLate.VoteDTO vote);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DeleteCommentary", ReplyAction="http://tempuri.org/IService1/DeleteCommentaryResponse")]
-        void DeleteCommentary();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetDisLikeLate", ReplyAction="http://tempuri.org/IService1/GetDisLikeLateResponse")]
+        int GetDisLikeLate(ServiceReferenceLate.VoteDTO vote);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DeleteCommentary", ReplyAction="http://tempuri.org/IService1/DeleteCommentaryResponse")]
-        System.Threading.Tasks.Task DeleteCommentaryAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetLinks", ReplyAction="http://tempuri.org/IService1/GetLinksResponse")]
-        ServiceReferenceLate.UserLateDTO[] GetLinks();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetLinks", ReplyAction="http://tempuri.org/IService1/GetLinksResponse")]
-        System.Threading.Tasks.Task<ServiceReferenceLate.UserLateDTO[]> GetLinksAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetDisLikeLate", ReplyAction="http://tempuri.org/IService1/GetDisLikeLateResponse")]
+        System.Threading.Tasks.Task<int> GetDisLikeLateAsync(ServiceReferenceLate.VoteDTO vote);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddLinkUserToVote", ReplyAction="http://tempuri.org/IService1/AddLinkUserToVoteResponse")]
-        ServiceReferenceLate.UserLateDTO AddLinkUserToVote(ServiceReferenceLate.UserLateDTO usersLate);
+        ServiceReferenceLate.VoteDTO AddLinkUserToVote(ServiceReferenceLate.VoteDTO usersLate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddLinkUserToVote", ReplyAction="http://tempuri.org/IService1/AddLinkUserToVoteResponse")]
-        System.Threading.Tasks.Task<ServiceReferenceLate.UserLateDTO> AddLinkUserToVoteAsync(ServiceReferenceLate.UserLateDTO usersLate);
+        System.Threading.Tasks.Task<ServiceReferenceLate.VoteDTO> AddLinkUserToVoteAsync(ServiceReferenceLate.VoteDTO usersLate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DeleteLinkUserToVote", ReplyAction="http://tempuri.org/IService1/DeleteLinkUserToVoteResponse")]
-        ServiceReferenceLate.UserLateDTO DeleteLinkUserToVote(ServiceReferenceLate.UserLateDTO usersLate);
+        ServiceReferenceLate.VoteDTO DeleteLinkUserToVote(ServiceReferenceLate.VoteDTO usersLate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DeleteLinkUserToVote", ReplyAction="http://tempuri.org/IService1/DeleteLinkUserToVoteResponse")]
-        System.Threading.Tasks.Task<ServiceReferenceLate.UserLateDTO> DeleteLinkUserToVoteAsync(ServiceReferenceLate.UserLateDTO usersLate);
+        System.Threading.Tasks.Task<ServiceReferenceLate.VoteDTO> DeleteLinkUserToVoteAsync(ServiceReferenceLate.VoteDTO usersLate);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/CreateCommentary", ReplyAction="http://tempuri.org/IService1/CreateCommentaryResponse")]
+        ServiceReferenceLate.CommentaryDTO CreateCommentary(ServiceReferenceLate.CommentaryDTO commentary);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/CreateCommentary", ReplyAction="http://tempuri.org/IService1/CreateCommentaryResponse")]
+        System.Threading.Tasks.Task<ServiceReferenceLate.CommentaryDTO> CreateCommentaryAsync(ServiceReferenceLate.CommentaryDTO commentary);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DeleteCommentary", ReplyAction="http://tempuri.org/IService1/DeleteCommentaryResponse")]
+        void DeleteCommentary(ServiceReferenceLate.CommentaryDTO commentary);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DeleteCommentary", ReplyAction="http://tempuri.org/IService1/DeleteCommentaryResponse")]
+        System.Threading.Tasks.Task DeleteCommentaryAsync(ServiceReferenceLate.CommentaryDTO commentary);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
@@ -492,74 +610,84 @@ namespace ServiceReferenceLate
             return base.Channel.CreateLateTicketAsync(lateTicket);
         }
         
-        public void LikeLateTicket(ServiceReferenceLate.UserLateDTO usersLate)
+        public void LikeLateTicket(ServiceReferenceLate.VoteDTO usersLate)
         {
             base.Channel.LikeLateTicket(usersLate);
         }
         
-        public System.Threading.Tasks.Task LikeLateTicketAsync(ServiceReferenceLate.UserLateDTO usersLate)
+        public System.Threading.Tasks.Task LikeLateTicketAsync(ServiceReferenceLate.VoteDTO usersLate)
         {
             return base.Channel.LikeLateTicketAsync(usersLate);
         }
         
-        public void DisLikeLateTicket(ServiceReferenceLate.UserLateDTO usersLate)
+        public void DisLikeLateTicket(ServiceReferenceLate.VoteDTO usersLate)
         {
             base.Channel.DisLikeLateTicket(usersLate);
         }
         
-        public System.Threading.Tasks.Task DisLikeLateTicketAsync(ServiceReferenceLate.UserLateDTO usersLate)
+        public System.Threading.Tasks.Task DisLikeLateTicketAsync(ServiceReferenceLate.VoteDTO usersLate)
         {
             return base.Channel.DisLikeLateTicketAsync(usersLate);
         }
         
-        public void CreateCommentary()
+        public int GetLikesLate(ServiceReferenceLate.VoteDTO vote)
         {
-            base.Channel.CreateCommentary();
+            return base.Channel.GetLikesLate(vote);
         }
         
-        public System.Threading.Tasks.Task CreateCommentaryAsync()
+        public System.Threading.Tasks.Task<int> GetLikesLateAsync(ServiceReferenceLate.VoteDTO vote)
         {
-            return base.Channel.CreateCommentaryAsync();
+            return base.Channel.GetLikesLateAsync(vote);
         }
         
-        public void DeleteCommentary()
+        public int GetDisLikeLate(ServiceReferenceLate.VoteDTO vote)
         {
-            base.Channel.DeleteCommentary();
+            return base.Channel.GetDisLikeLate(vote);
         }
         
-        public System.Threading.Tasks.Task DeleteCommentaryAsync()
+        public System.Threading.Tasks.Task<int> GetDisLikeLateAsync(ServiceReferenceLate.VoteDTO vote)
         {
-            return base.Channel.DeleteCommentaryAsync();
+            return base.Channel.GetDisLikeLateAsync(vote);
         }
         
-        public ServiceReferenceLate.UserLateDTO[] GetLinks()
-        {
-            return base.Channel.GetLinks();
-        }
-        
-        public System.Threading.Tasks.Task<ServiceReferenceLate.UserLateDTO[]> GetLinksAsync()
-        {
-            return base.Channel.GetLinksAsync();
-        }
-        
-        public ServiceReferenceLate.UserLateDTO AddLinkUserToVote(ServiceReferenceLate.UserLateDTO usersLate)
+        public ServiceReferenceLate.VoteDTO AddLinkUserToVote(ServiceReferenceLate.VoteDTO usersLate)
         {
             return base.Channel.AddLinkUserToVote(usersLate);
         }
         
-        public System.Threading.Tasks.Task<ServiceReferenceLate.UserLateDTO> AddLinkUserToVoteAsync(ServiceReferenceLate.UserLateDTO usersLate)
+        public System.Threading.Tasks.Task<ServiceReferenceLate.VoteDTO> AddLinkUserToVoteAsync(ServiceReferenceLate.VoteDTO usersLate)
         {
             return base.Channel.AddLinkUserToVoteAsync(usersLate);
         }
         
-        public ServiceReferenceLate.UserLateDTO DeleteLinkUserToVote(ServiceReferenceLate.UserLateDTO usersLate)
+        public ServiceReferenceLate.VoteDTO DeleteLinkUserToVote(ServiceReferenceLate.VoteDTO usersLate)
         {
             return base.Channel.DeleteLinkUserToVote(usersLate);
         }
         
-        public System.Threading.Tasks.Task<ServiceReferenceLate.UserLateDTO> DeleteLinkUserToVoteAsync(ServiceReferenceLate.UserLateDTO usersLate)
+        public System.Threading.Tasks.Task<ServiceReferenceLate.VoteDTO> DeleteLinkUserToVoteAsync(ServiceReferenceLate.VoteDTO usersLate)
         {
             return base.Channel.DeleteLinkUserToVoteAsync(usersLate);
+        }
+        
+        public ServiceReferenceLate.CommentaryDTO CreateCommentary(ServiceReferenceLate.CommentaryDTO commentary)
+        {
+            return base.Channel.CreateCommentary(commentary);
+        }
+        
+        public System.Threading.Tasks.Task<ServiceReferenceLate.CommentaryDTO> CreateCommentaryAsync(ServiceReferenceLate.CommentaryDTO commentary)
+        {
+            return base.Channel.CreateCommentaryAsync(commentary);
+        }
+        
+        public void DeleteCommentary(ServiceReferenceLate.CommentaryDTO commentary)
+        {
+            base.Channel.DeleteCommentary(commentary);
+        }
+        
+        public System.Threading.Tasks.Task DeleteCommentaryAsync(ServiceReferenceLate.CommentaryDTO commentary)
+        {
+            return base.Channel.DeleteCommentaryAsync(commentary);
         }
         
         public virtual System.Threading.Tasks.Task OpenAsync()
