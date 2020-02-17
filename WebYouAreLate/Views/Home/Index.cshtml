@@ -24,7 +24,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="@Url.Action("addLateTicket")" method="post">
+                <form action="@Url.Action("addLateTicket")" enctype="multipart/form-data" method="post">
                     <div class="form-group">
                         <input name="subject" type="text" placeholder="Pourquoi est-tu en retard ?" />
                     </div>
@@ -36,7 +36,7 @@
                         <label for="picture">Une Preuve ?</label>
                         <input type="file" name="image" value="" accept="image/png, image/jpeg" />
                     </div>
-
+                    <button type="submit" class="btn btn-primary">Save changes</button>
                 </form>
             </div>
             <div class="modal-footer">
@@ -53,7 +53,7 @@
     @foreach (var item in Model.tickets)
     {
     <div class="card col-2">
-        <img class="card-img-top" src="img/funny1.gif" alt="Card image cap">
+        <img class="card-img-top" src="~/img/upload/@item.image" alt="Card image cap">
         <div class="card-body">
             @item.Subject
         </div>

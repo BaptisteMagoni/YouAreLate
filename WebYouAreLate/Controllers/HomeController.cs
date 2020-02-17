@@ -10,6 +10,7 @@ using ModuleWebServiceLate.Service;
 using Microsoft.AspNetCore.Http;
 using ServiceReferenceLate;
 using Microsoft.AspNetCore.Authorization;
+using System.IO;
 
 namespace WebYouAreLate.Controllers
 {
@@ -53,21 +54,30 @@ namespace WebYouAreLate.Controllers
         }
     
         
-        public void addLateTicket(IFormCollection collection)
+        public async Task addLateTicketAsync(IFormCollection collection, IFormFile file)
         {
-            if (!string.IsNullOrEmpty(collection["form-username"]) && !string.IsNullOrEmpty(collection["form-password"]))
+
+
+
+            if (!string.IsNullOrEmpty(collection["date"]) && !string.IsNullOrEmpty(collection["subject"]))
             {
                 LateTicketDTO newTicket = new LateTicketDTO();
                 newTicket.Subject = collection["subject"];
                 newTicket.datetime = DateTime.Parse(collection["date"]);
-                newTicket.image = "UrlBidon";
+                newTicket.image = Path.GetRandomFileName()+ Path.GetExtension(collection.Files[0].FileName);
                 newTicket.idUser = 1;
+                using (var stream = System.IO.File.Create(Path.Combine(@".\wwwroot\img\upload\", newTicket.image)))
+                {
+                    await collection.Files[0].CopyToAsync(stream);
+                }
                 late.CreateLateTicket(newTicket);
+
             }
         }
         
         public IActionResult Index()
         {
+            
             HomeModel home = new HomeModel
             {
                 tickets = late.GetLateTickets()
