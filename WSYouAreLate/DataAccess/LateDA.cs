@@ -152,7 +152,7 @@ namespace WSYouAreLate.DataAccess
                     bdd.SaveChanges();
                 }
             }
-            catch
+            catch(Exception e)
             {
 
             }
