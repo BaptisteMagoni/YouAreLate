@@ -34,6 +34,7 @@ namespace WebYouAreLate.Controllers
             VoteDTO vote = new VoteDTO() {
                 idlate = Int32.Parse(idTicket.ToString()),
                 iduser = Int32.Parse(idUser)
+                
             };
             late.LikeLateTicket(vote);
             return RedirectToAction("Index");
@@ -77,10 +78,13 @@ namespace WebYouAreLate.Controllers
         
         public IActionResult Index()
         {
-            
+            List < LateTicketDTO > tickets = late.GetLateTickets();
+
+            tickets.ForEach(x => x.merite = late.GetCountLikesLate(x) - late.GetCountDisLikeLate(x));
+
             HomeModel home = new HomeModel
             {
-                tickets = late.GetLateTickets()
+                tickets = tickets
             };
             return View(home);
         }
