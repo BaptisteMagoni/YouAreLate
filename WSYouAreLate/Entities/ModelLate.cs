@@ -13,17 +13,13 @@ namespace WSYouAreLate.Entities
         {
         }
 
-        public virtual DbSet<Commentary> Commentary { get; set; }
         public virtual DbSet<LateTicket> LateTicket { get; set; }
         public virtual DbSet<Users> Users { get; set; }
+        public virtual DbSet<Commentary> Commentary { get; set; }
         public virtual DbSet<UserVote> UserVote { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Commentary>()
-                .Property(e => e.message)
-                .IsUnicode(false);
-
             modelBuilder.Entity<LateTicket>()
                 .Property(e => e.Subject)
                 .IsUnicode(false);
@@ -65,15 +61,15 @@ namespace WSYouAreLate.Entities
                 .IsUnicode(false);
 
             modelBuilder.Entity<Users>()
-                .HasMany(e => e.Commentary)
-                .WithRequired(e => e.Users)
-                .HasForeignKey(e => e.iduser)
-                .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<Users>()
                 .HasMany(e => e.LateTicket)
                 .WithRequired(e => e.Users)
                 .HasForeignKey(e => e.idUser)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Users>()
+                .HasMany(e => e.Commentary)
+                .WithRequired(e => e.Users)
+                .HasForeignKey(e => e.iduser)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Users>()
@@ -81,6 +77,10 @@ namespace WSYouAreLate.Entities
                 .WithRequired(e => e.Users)
                 .HasForeignKey(e => e.iduser)
                 .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Commentary>()
+                .Property(e => e.message)
+                .IsUnicode(false);
         }
     }
 }

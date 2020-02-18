@@ -136,10 +136,10 @@ namespace WSYouAreLate
 
         #region Commentary
 
-        public List<CommentaryDTO> GetCommentaryTicketLate(LateTicketDTO lateTicket)
+        public List<CommentaryDTO> GetCommentariesTicketLate(LateTicketDTO lateTicket)
         {
             ServiceLate service = new ServiceLate();
-            return service.GetCommentaryTicketLate(lateTicket);
+            return service.GetCommentariesTicketLate(lateTicket);
         }
         public CommentaryDTO CreateCommentary(CommentaryDTO commentary)
         {

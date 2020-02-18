@@ -251,7 +251,7 @@ namespace WSYouAreLate.DataAccess
 
         #region Commentary
 
-        public List<Commentary> GetCommentaryTicketLate(LateTicket lateTicket)
+        public List<Commentary> GetCommentariesTicketLate(LateTicket lateTicket)
         {
             try
             {

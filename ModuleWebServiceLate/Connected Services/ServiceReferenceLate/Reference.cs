@@ -472,11 +472,11 @@ namespace ServiceReferenceLate
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DeleteLinkUserToVote", ReplyAction="http://tempuri.org/IService1/DeleteLinkUserToVoteResponse")]
         System.Threading.Tasks.Task<ServiceReferenceLate.VoteDTO> DeleteLinkUserToVoteAsync(ServiceReferenceLate.VoteDTO usersLate);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetCommentaryTicketLate", ReplyAction="http://tempuri.org/IService1/GetCommentaryTicketLateResponse")]
-        ServiceReferenceLate.CommentaryDTO[] GetCommentaryTicketLate(ServiceReferenceLate.LateTicketDTO lateTicket);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetCommentariesTicketLate", ReplyAction="http://tempuri.org/IService1/GetCommentariesTicketLateResponse")]
+        ServiceReferenceLate.CommentaryDTO[] GetCommentariesTicketLate(ServiceReferenceLate.LateTicketDTO lateTicket);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetCommentaryTicketLate", ReplyAction="http://tempuri.org/IService1/GetCommentaryTicketLateResponse")]
-        System.Threading.Tasks.Task<ServiceReferenceLate.CommentaryDTO[]> GetCommentaryTicketLateAsync(ServiceReferenceLate.LateTicketDTO lateTicket);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetCommentariesTicketLate", ReplyAction="http://tempuri.org/IService1/GetCommentariesTicketLateResponse")]
+        System.Threading.Tasks.Task<ServiceReferenceLate.CommentaryDTO[]> GetCommentariesTicketLateAsync(ServiceReferenceLate.LateTicketDTO lateTicket);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/CreateCommentary", ReplyAction="http://tempuri.org/IService1/CreateCommentaryResponse")]
         ServiceReferenceLate.CommentaryDTO CreateCommentary(ServiceReferenceLate.CommentaryDTO commentary);
@@ -691,14 +691,14 @@ namespace ServiceReferenceLate
             return base.Channel.DeleteLinkUserToVoteAsync(usersLate);
         }
         
-        public ServiceReferenceLate.CommentaryDTO[] GetCommentaryTicketLate(ServiceReferenceLate.LateTicketDTO lateTicket)
+        public ServiceReferenceLate.CommentaryDTO[] GetCommentariesTicketLate(ServiceReferenceLate.LateTicketDTO lateTicket)
         {
-            return base.Channel.GetCommentaryTicketLate(lateTicket);
+            return base.Channel.GetCommentariesTicketLate(lateTicket);
         }
         
-        public System.Threading.Tasks.Task<ServiceReferenceLate.CommentaryDTO[]> GetCommentaryTicketLateAsync(ServiceReferenceLate.LateTicketDTO lateTicket)
+        public System.Threading.Tasks.Task<ServiceReferenceLate.CommentaryDTO[]> GetCommentariesTicketLateAsync(ServiceReferenceLate.LateTicketDTO lateTicket)
         {
-            return base.Channel.GetCommentaryTicketLateAsync(lateTicket);
+            return base.Channel.GetCommentariesTicketLateAsync(lateTicket);
         }
         
         public ServiceReferenceLate.CommentaryDTO CreateCommentary(ServiceReferenceLate.CommentaryDTO commentary)

@@ -177,12 +177,12 @@ namespace WSYouAreLate.BusinessRules
 
         #region Commentary
 
-        public List<CommentaryDTO> GetCommentaryTicketLate(LateTicketDTO lateTicket)
+        public List<CommentaryDTO> GetCommentariesTicketLate(LateTicketDTO lateTicket)
         {
             try
             {
                 LateTicket comment = _mapper.Map<LateTicket>(lateTicket);
-                return _mapper.Map<List<CommentaryDTO>>(_lateDA.GetCommentaryTicketLate(comment));
+                return _mapper.Map<List<CommentaryDTO>>(_lateDA.GetCommentariesTicketLate(comment));
             }
             catch
             {

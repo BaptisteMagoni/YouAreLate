@@ -86,7 +86,7 @@ namespace WSYouAreLate
         #region Commentary
 
         [OperationContract]
-        List<CommentaryDTO> GetCommentaryTicketLate(LateTicketDTO lateTicket);
+        List<CommentaryDTO> GetCommentariesTicketLate(LateTicketDTO lateTicket);
 
         [OperationContract]
         CommentaryDTO CreateCommentary(CommentaryDTO commentary);

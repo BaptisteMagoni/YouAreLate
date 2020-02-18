@@ -19,8 +19,10 @@ namespace WSYouAreLate.Entities
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int idlate { get; set; }
 
-        [StringLength(45)]
+        [StringLength(255)]
         public string message { get; set; }
+
+        public DateTime? date { get; set; }
 
         public virtual LateTicket LateTicket { get; set; }
 

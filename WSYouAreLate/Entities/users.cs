@@ -12,8 +12,8 @@ namespace WSYouAreLate.Entities
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Users()
         {
-            Commentary = new HashSet<Commentary>();
             LateTicket = new HashSet<LateTicket>();
+            Commentary = new HashSet<Commentary>();
             UserVote = new HashSet<UserVote>();
         }
 
@@ -37,10 +37,10 @@ namespace WSYouAreLate.Entities
         public string classe { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Commentary> Commentary { get; set; }
+        public virtual ICollection<LateTicket> LateTicket { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<LateTicket> LateTicket { get; set; }
+        public virtual ICollection<Commentary> Commentary { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<UserVote> UserVote { get; set; }
