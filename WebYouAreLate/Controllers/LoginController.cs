@@ -29,12 +29,12 @@ namespace YouAreLate.Controllers
                 string username = collection["form-username"];
                 string password = collection["form-password"];
 
-                UserDTO userDTO = late.AuthentificateUser(username, password);
+                UserDTO userDTO = late.AuthentificateUser(username, password); //null if credential is bad 
 
                 if (userDTO != null)
                 {
 
-                    var userClaims = new List<Claim>
+                    var userClaims = new List<Claim> //Init Cookie
                     {
                         new Claim("UserID", userDTO.id.ToString()),
                         new Claim("UserName", userDTO.identifiant)
@@ -44,53 +44,13 @@ namespace YouAreLate.Controllers
 
                     var userPrincipal = new ClaimsPrincipal(new[] { userIdenity });
 
-                    HttpContext.SignInAsync(userPrincipal);
+                    HttpContext.SignInAsync(userPrincipal); //Set Cookie
 
-                    return Redirect("/Home");
+                    return Redirect("/Home"); 
                 }
 
             }
             return RedirectToAction("Index");
-        }
-
-       //[HttpPost]
-       // public ActionResult Index(LoginModel viewModel, string returnUrl)
-       // {
-
-       //     UserDTO userDTO = late.AuthentificateUser(viewModel.userDTO.identifiant, viewModel.userDTO.password);
-
-       //     if (userDTO != null)
-       //     {
-
-       //         var grandmaClaims = new List<Claim>
-       //         {
-       //             new Claim(ClaimTypes.Name, viewModel.userDTO.identifiant),
-       //             new Claim("Grandma.Says", "Suce ma bite")
-       //         };
-
-       //         var licenseClaims = new List<Claim>()
-       //         {
-       //             new Claim(ClaimTypes.Name, "Bob K Foo"),
-       //             new Claim("DrinvingLicense", "A+"),
-       //         };
-
-       //         var grandmaIdentity = new ClaimsIdentity(grandmaClaims, "Grandma Identity");
-       //         var licenseIdentity = new ClaimsIdentity(licenseClaims, "Government");
-
-       //         var userPrincipal = new ClaimsPrincipal(new[] { grandmaIdentity, licenseIdentity });
-
-       //         HttpContext.SignInAsync(userPrincipal);
-
-       //         return RedirectToAction("Home");
-       //     }
-
-       //     return View("Login/Index");
-       // }
-
-        [Authorize]
-        public ActionResult Home()
-        {
-            return View();
         }
 
     }

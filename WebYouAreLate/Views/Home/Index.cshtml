@@ -52,15 +52,40 @@
 <div class="row">
     @foreach (var item in Model.tickets)
     {
-    <div class="card col-2">
+    <div class="card col-4">
         <img class="card-img-top" src="~/img/upload/@item.image" alt="Card image cap">
         <div class="card-body">
             @item.Subject
         </div>
         <div class="card-body">
-                Mérite : @item.merite
-                <a href="/Home/UpVote/@item.id" ><img src="img/icons/clap.svg" alt="Bien joué Nils" style="width: 32px;" data-toggle="tooltip" data-placement="top" title="<img src='img/clap.gif'>"></a>
-                <a href="/Home/DownVote/@item.id" ><img src="img/icons/hit.svg" alt="Va bosser !" style="width: 32px;" data-toggle="tooltip" data-placement="top" title="<img src='img/slap.gif'>"></a>
+            <div class="row">
+
+            </div>
+            @foreach (var comment in Model.late.GetCommentariesTicketLate(item))
+            {
+                <div class="col-sm-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+
+                            <strong>@Model.late.GetUser(new ServiceReferenceLate.UserDTO { id = comment.iduser }).identifiant</strong> <span class="text-muted">@comment.date</span>
+                        </div>
+                        <div class="panel-body">
+                            @comment.message
+                        </div><!-- /panel-body -->
+                    </div><!-- /panel panel-default -->
+                </div><!-- /col-sm-5 --> 
+            }
+            <form action="@Url.Action("AddComment")" method="post">
+                <input type="text" name="message" value="" />
+                <input type="hidden" name="idTicket" value="@item.idUser"/>
+                <button class="btn btn-info">Publier</button>
+            </form> 
+        </div>
+
+        <div class="card-body">
+            Mérite : @item.merite
+            <a href="/Home/UpVote/@item.id"><img src="img/icons/clap.svg" alt="Bien joué Nils" style="width: 32px;" data-toggle="tooltip" data-placement="top" title="<img src='img/clap.gif'>"></a>
+            <a href="/Home/DownVote/@item.id"><img src="img/icons/hit.svg" alt="Va bosser !" style="width: 32px;" data-toggle="tooltip" data-placement="top" title="<img src='img/slap.gif'>"></a>
         </div>
     </div>
     }
