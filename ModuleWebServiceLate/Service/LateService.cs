@@ -196,6 +196,18 @@ namespace ModuleWebServiceLate.Service
 
         #region Commentary
 
+        public List<CommentaryDTO> GetCommentaryTicketLate(LateTicketDTO lateTicket)
+        {
+            try
+            {
+                return new List<CommentaryDTO>(service.GetCommentaryTicketLate(lateTicket));
+            }
+            catch
+            {
+                return new List<CommentaryDTO>();
+            }
+        }
+
         public CommentaryDTO CreateCommentary(CommentaryDTO commentary)
         {
             try

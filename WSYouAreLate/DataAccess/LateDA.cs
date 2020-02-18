@@ -251,6 +251,21 @@ namespace WSYouAreLate.DataAccess
 
         #region Commentary
 
+        public List<Commentary> GetCommentaryTicketLate(LateTicket lateTicket)
+        {
+            try
+            {
+                using (ModelLate bdd = new ModelLate())
+                {
+                    return bdd.Commentary.Where(x => x.idlate == lateTicket.id).ToList();
+                }
+            }
+            catch
+            {
+                return new List<Commentary>();
+            }
+        }
+
         public Commentary CreateCommentary(Commentary commentary)
         {
             try
