@@ -316,6 +316,8 @@ namespace ServiceReferenceLate
     public partial class CommentaryDTO : object
     {
         
+        private ServiceReferenceLate.Users UsersField;
+        
         private System.DateTime dateField;
         
         private int idlateField;
@@ -323,6 +325,19 @@ namespace ServiceReferenceLate
         private int iduserField;
         
         private string messageField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ServiceReferenceLate.Users Users
+        {
+            get
+            {
+                return this.UsersField;
+            }
+            set
+            {
+                this.UsersField = value;
+            }
+        }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.DateTime date
@@ -377,6 +392,454 @@ namespace ServiceReferenceLate
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Users", Namespace="http://schemas.datacontract.org/2004/07/WSYouAreLate.Entities")]
+    public partial class Users : object
+    {
+        
+        private ServiceReferenceLate.Commentary[] CommentaryField;
+        
+        private ServiceReferenceLate.LateTicket[] LateTicketField;
+        
+        private ServiceReferenceLate.UserVote[] UserVoteField;
+        
+        private string classeField;
+        
+        private string firstnameField;
+        
+        private int idField;
+        
+        private string identifiantField;
+        
+        private string lastnameField;
+        
+        private string passwordField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ServiceReferenceLate.Commentary[] Commentary
+        {
+            get
+            {
+                return this.CommentaryField;
+            }
+            set
+            {
+                this.CommentaryField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ServiceReferenceLate.LateTicket[] LateTicket
+        {
+            get
+            {
+                return this.LateTicketField;
+            }
+            set
+            {
+                this.LateTicketField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ServiceReferenceLate.UserVote[] UserVote
+        {
+            get
+            {
+                return this.UserVoteField;
+            }
+            set
+            {
+                this.UserVoteField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string classe
+        {
+            get
+            {
+                return this.classeField;
+            }
+            set
+            {
+                this.classeField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string firstname
+        {
+            get
+            {
+                return this.firstnameField;
+            }
+            set
+            {
+                this.firstnameField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id
+        {
+            get
+            {
+                return this.idField;
+            }
+            set
+            {
+                this.idField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string identifiant
+        {
+            get
+            {
+                return this.identifiantField;
+            }
+            set
+            {
+                this.identifiantField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string lastname
+        {
+            get
+            {
+                return this.lastnameField;
+            }
+            set
+            {
+                this.lastnameField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string password
+        {
+            get
+            {
+                return this.passwordField;
+            }
+            set
+            {
+                this.passwordField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Commentary", Namespace="http://schemas.datacontract.org/2004/07/WSYouAreLate.Entities")]
+    public partial class Commentary : object
+    {
+        
+        private ServiceReferenceLate.LateTicket LateTicketField;
+        
+        private ServiceReferenceLate.Users UsersField;
+        
+        private System.Nullable<System.DateTime> dateField;
+        
+        private int idlateField;
+        
+        private int iduserField;
+        
+        private string messageField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ServiceReferenceLate.LateTicket LateTicket
+        {
+            get
+            {
+                return this.LateTicketField;
+            }
+            set
+            {
+                this.LateTicketField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ServiceReferenceLate.Users Users
+        {
+            get
+            {
+                return this.UsersField;
+            }
+            set
+            {
+                this.UsersField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> date
+        {
+            get
+            {
+                return this.dateField;
+            }
+            set
+            {
+                this.dateField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int idlate
+        {
+            get
+            {
+                return this.idlateField;
+            }
+            set
+            {
+                this.idlateField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int iduser
+        {
+            get
+            {
+                return this.iduserField;
+            }
+            set
+            {
+                this.iduserField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string message
+        {
+            get
+            {
+                return this.messageField;
+            }
+            set
+            {
+                this.messageField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="LateTicket", Namespace="http://schemas.datacontract.org/2004/07/WSYouAreLate.Entities")]
+    public partial class LateTicket : object
+    {
+        
+        private ServiceReferenceLate.Commentary[] CommentaryField;
+        
+        private string SubjectField;
+        
+        private ServiceReferenceLate.UserVote[] UserVoteField;
+        
+        private ServiceReferenceLate.Users UsersField;
+        
+        private System.DateTime datetimeField;
+        
+        private int idField;
+        
+        private int idUserField;
+        
+        private string imageField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ServiceReferenceLate.Commentary[] Commentary
+        {
+            get
+            {
+                return this.CommentaryField;
+            }
+            set
+            {
+                this.CommentaryField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Subject
+        {
+            get
+            {
+                return this.SubjectField;
+            }
+            set
+            {
+                this.SubjectField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ServiceReferenceLate.UserVote[] UserVote
+        {
+            get
+            {
+                return this.UserVoteField;
+            }
+            set
+            {
+                this.UserVoteField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ServiceReferenceLate.Users Users
+        {
+            get
+            {
+                return this.UsersField;
+            }
+            set
+            {
+                this.UsersField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime datetime
+        {
+            get
+            {
+                return this.datetimeField;
+            }
+            set
+            {
+                this.datetimeField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id
+        {
+            get
+            {
+                return this.idField;
+            }
+            set
+            {
+                this.idField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int idUser
+        {
+            get
+            {
+                return this.idUserField;
+            }
+            set
+            {
+                this.idUserField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string image
+        {
+            get
+            {
+                return this.imageField;
+            }
+            set
+            {
+                this.imageField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="UserVote", Namespace="http://schemas.datacontract.org/2004/07/WSYouAreLate.Entities")]
+    public partial class UserVote : object
+    {
+        
+        private ServiceReferenceLate.LateTicket LateTicketField;
+        
+        private ServiceReferenceLate.Users UsersField;
+        
+        private System.Nullable<int> VoteField;
+        
+        private int idlateField;
+        
+        private int iduserField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ServiceReferenceLate.LateTicket LateTicket
+        {
+            get
+            {
+                return this.LateTicketField;
+            }
+            set
+            {
+                this.LateTicketField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ServiceReferenceLate.Users Users
+        {
+            get
+            {
+                return this.UsersField;
+            }
+            set
+            {
+                this.UsersField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> Vote
+        {
+            get
+            {
+                return this.VoteField;
+            }
+            set
+            {
+                this.VoteField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int idlate
+        {
+            get
+            {
+                return this.idlateField;
+            }
+            set
+            {
+                this.idlateField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int iduser
+        {
+            get
+            {
+                return this.iduserField;
+            }
+            set
+            {
+                this.iduserField = value;
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReferenceLate.IService1")]
     public interface IService1
@@ -399,6 +862,12 @@ namespace ServiceReferenceLate
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetUser", ReplyAction="http://tempuri.org/IService1/GetUserResponse")]
         System.Threading.Tasks.Task<ServiceReferenceLate.UserDTO[]> GetUserAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetUserByUser", ReplyAction="http://tempuri.org/IService1/GetUserByUserResponse")]
+        ServiceReferenceLate.UserDTO GetUserByUser(ServiceReferenceLate.UserDTO user);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetUserByUser", ReplyAction="http://tempuri.org/IService1/GetUserByUserResponse")]
+        System.Threading.Tasks.Task<ServiceReferenceLate.UserDTO> GetUserByUserAsync(ServiceReferenceLate.UserDTO user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AuthentificateUser", ReplyAction="http://tempuri.org/IService1/AuthentificateUserResponse")]
         ServiceReferenceLate.UserDTO AuthentificateUser(string login, string password);
@@ -569,6 +1038,16 @@ namespace ServiceReferenceLate
         public System.Threading.Tasks.Task<ServiceReferenceLate.UserDTO[]> GetUserAsync()
         {
             return base.Channel.GetUserAsync();
+        }
+        
+        public ServiceReferenceLate.UserDTO GetUserByUser(ServiceReferenceLate.UserDTO user)
+        {
+            return base.Channel.GetUserByUser(user);
+        }
+        
+        public System.Threading.Tasks.Task<ServiceReferenceLate.UserDTO> GetUserByUserAsync(ServiceReferenceLate.UserDTO user)
+        {
+            return base.Channel.GetUserByUserAsync(user);
         }
         
         public ServiceReferenceLate.UserDTO AuthentificateUser(string login, string password)

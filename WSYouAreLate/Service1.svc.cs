@@ -48,6 +48,12 @@ namespace WSYouAreLate
             return service.GetUsers();
         }
 
+        public UserDTO GetUserByUser(UserDTO user)
+        {
+            ServiceLate service = new ServiceLate();
+            return service.GetUser(user);
+        }
+
         public UserDTO CreateUser(UserDTO user)
         {
             ServiceLate service = new ServiceLate();

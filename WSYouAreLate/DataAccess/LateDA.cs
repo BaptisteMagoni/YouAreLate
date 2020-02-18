@@ -28,6 +28,21 @@ namespace WSYouAreLate.DataAccess
             }
         }
         
+        public Users GetUser(Users user)
+        {
+            using(ModelLate bdd = new ModelLate())
+            {
+                try
+                {
+                    return bdd.Users.Where(x => x.id == user.id).FirstOrDefault();
+                }
+                catch
+                {
+                    return null;
+                }
+            }
+        }
+
         public Users AuthentificateUser(string login, string password)
         {
             using(ModelLate bdd = new ModelLate())

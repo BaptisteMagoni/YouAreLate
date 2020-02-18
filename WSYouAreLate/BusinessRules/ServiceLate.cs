@@ -40,6 +40,11 @@ namespace WSYouAreLate.BusinessRules
             
         }
 
+        public UserDTO GetUser(UserDTO user)
+        {
+            return _mapper.Map<UserDTO>(_lateDA.GetUser(_mapper.Map<Users>(user)));
+        }
+
         public UserDTO AuthentificationUser(string login, string password)
         {
             return _mapper.Map<UserDTO>(_lateDA.AuthentificateUser(login, password));

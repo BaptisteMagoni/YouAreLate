@@ -42,6 +42,18 @@ namespace ModuleWebServiceLate.Service
             }
         }
 
+        public UserDTO GetUser(UserDTO user)
+        {
+            try
+            {
+                return service.GetUserByUser(user);
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
         public UserDTO CreateUser(UserDTO user)
         {
             try

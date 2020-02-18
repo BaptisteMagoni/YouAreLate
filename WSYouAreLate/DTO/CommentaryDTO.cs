@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using WSYouAreLate.Entities;
 
 namespace WSYouAreLate.DTO
 {
@@ -15,6 +16,8 @@ namespace WSYouAreLate.DTO
         public string message { get; set; }
 
         public DateTime date { get; set; }
+
+        public Users Users { get; set; }
 
     }
 }
