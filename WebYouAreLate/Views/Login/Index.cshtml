@@ -1,4 +1,4 @@
-@model object
+@model LoginModel
 
 @{
     ViewBag.Title = "Login";
@@ -8,20 +8,26 @@
         <h2 class="text-center m-2 mb-5">Login</h2>
         <div class="wrapper">
             <div id="formContent">
-                <form action="@Url.Action("Authentificate")" method="POST">
+                <form method="post" action="@Url.Action("Authentificate")">
                     <div class="form-group col-8 mx-auto">
                         <input type="text"
-                               class="form-control"
+                               class="form-control m-2"
                                name="form-username"
                                placeholder="Username"
+                               required
+                               v-model="username" />
                     </div>
                     <div class="form-group col-8 mx-auto">
                         <input type="password"
-                               class="form-control"
+                               class="form-control m-2"
                                name="form-password"
                                placeholder="Password"
+                               required
+                               v-model="password" />
+
                     </div>
-                        <input type="submit" class="btn btn-primary" value="Login" />
+                    <input type="submit" class="btn btn-primary" value="Login" />
+                    <br />
                 </form>
             </div>
         </div>

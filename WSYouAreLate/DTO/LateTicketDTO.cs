@@ -19,5 +19,7 @@ namespace WSYouAreLate.DTO
 
         public string image { get; set; }
 
+        public int merite { get; set; }
+
     }
 }

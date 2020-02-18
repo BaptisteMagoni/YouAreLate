@@ -9,6 +9,7 @@ namespace WSYouAreLate.DataAccess
 {
     public class LateDA
     {
+        
         #region Users
         public List<Users> GetUsers()
         {
@@ -138,14 +139,34 @@ namespace WSYouAreLate.DataAccess
 
         #region Vote
 
-        public void LikeLateTicket(UsersLate usersLate)
+        #region Like && DisLike
+
+        public void LikeLateTicket(UserVote usersLate)
         {
             try
             {
                 using(ModelLate bdd = new ModelLate())
                 {
-                    UsersLate late = bdd.UsersLate.Where(x => x.iduser == usersLate.iduser && x.idlate == usersLate.idlate).FirstOrDefault();
-                    late.Vote = 1;
+                    usersLate.Vote = 1;
+                    UserVote late = bdd.UserVote.Add(usersLate);
+                    bdd.SaveChanges();
+                }
+            }
+            catch(Exception e)
+            {
+
+            }
+        }
+
+        public void DisLikeLateTicket(UserVote usersLate)
+        {
+            try
+            {
+                using(ModelLate bdd = new ModelLate())
+                {
+                    usersLate.Vote = -1;
+                    UserVote late = bdd.UserVote.Add(usersLate);
+                    bdd.SaveChanges();
                 }
             }
             catch
@@ -154,68 +175,91 @@ namespace WSYouAreLate.DataAccess
             }
         }
 
-        public void DisLikeLateTicket(UsersLate usersLate)
+        #endregion
+
+        #region CRUD
+
+        public int GetCountLikesLate(LateTicket ticket)
         {
             try
             {
-                using(ModelLate bdd = new ModelLate())
+                using (ModelLate bdd = new ModelLate())
                 {
-                    UsersLate late = bdd.UsersLate.Where(x => x.iduser == usersLate.iduser && x.idlate == usersLate.idlate).FirstOrDefault();
-                    late.Vote = -1;
+                    return bdd.UserVote.Where(x => x.idlate == ticket.id && x.Vote == 1).Count();
                 }
             }
             catch
             {
-
+                return -1;
             }
         }
+
+        public int GetCountDisLikeLate(LateTicket ticket)
+        {
+            try
+            {
+                using (ModelLate bdd = new ModelLate())
+                {
+                    return bdd.UserVote.Where(x => x.idlate == ticket.id && x.Vote == -1).Count();
+                }
+            }
+            catch
+            {
+                return -1;
+            }
+        }
+
+        public UserVote AddLinkUserToVote(UserVote vote)
+        {
+
+            try
+            {
+                using (ModelLate bdd = new ModelLate())
+                {
+                    UserVote link = bdd.UserVote.Add(vote);
+                    bdd.SaveChanges();
+                    return link;
+
+                }
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+        public UserVote DeleteLinkUserToVote(UserVote vote)
+        {
+            try
+            {
+                using (ModelLate bdd = new ModelLate())
+                {
+                    UserVote link = bdd.UserVote.Remove(vote);
+                    bdd.SaveChanges();
+                    return link;
+                }
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+        #endregion
 
         #endregion
 
         #region Commentary
 
-        public void CreateCommentary()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void DeleteCommentary()
-        {
-            throw new NotImplementedException();
-        }
-
-        #endregion
-
-        #endregion
-
-        #region UsersLate
-
-        public List<UsersLate> GetLinks()
+        public Commentary CreateCommentary(Commentary commentary)
         {
             try
             {
                 using(ModelLate bdd = new ModelLate())
                 {
-                    return bdd.UsersLate.ToList();
-                }
-            }
-            catch
-            {
-                return new List<UsersLate>();
-            }
-        }
-
-        public UsersLate AddLinkUserToVote(UsersLate usersLate)
-        {
-
-            try
-            {
-                using(ModelLate bdd = new ModelLate())
-                {
-                    UsersLate link = bdd.UsersLate.Add(usersLate);
+                    Commentary comment = bdd.Commentary.Add(commentary);
                     bdd.SaveChanges();
-                    return link;
-
+                    return comment;
                 }
             }
             catch
@@ -224,23 +268,25 @@ namespace WSYouAreLate.DataAccess
             }
         }
 
-        public UsersLate DeleteLinkUserToVote(UsersLate usersLate)
+        public void DeleteCommentary(Commentary commentary)
         {
             try
             {
                 using(ModelLate bdd = new ModelLate())
                 {
-                    UsersLate link = bdd.UsersLate.Remove(usersLate);
+                    bdd.Commentary.Remove(commentary);
                     bdd.SaveChanges();
-                    return link;
                 }
             }
             catch
             {
-                return null;
+
             }
         }
 
         #endregion
+
+        #endregion
+
     }
 }

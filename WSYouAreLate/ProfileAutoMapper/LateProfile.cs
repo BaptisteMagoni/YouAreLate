@@ -15,11 +15,14 @@ namespace WSYouAreLate.ProfileAutoMapper
             CreateMap<Users, UserDTO>();
             CreateMap<UserDTO, Users>();
 
-            CreateMap<UsersLate, UserLateDTO>();
-            CreateMap<UserLateDTO, UsersLate>();
+            CreateMap<UserVote, VoteDTO>();
+            CreateMap<VoteDTO, UserVote>();
 
             CreateMap<LateTicket, LateTicketDTO>();
             CreateMap<LateTicketDTO, LateTicket>();
+
+            CreateMap<Commentary, CommentaryDTO>();
+            CreateMap<CommentaryDTO, Commentary>();
         }
     }
 }

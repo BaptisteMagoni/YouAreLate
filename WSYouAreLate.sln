@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WSYouAreLate", "WSYouAreLat
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebYouAreLate", "WebYouAreLate\WebYouAreLate.csproj", "{F797ED46-C992-4EFC-BBB8-37FA1EC6668D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModuleWebServiceLate", "ModuleWebServiceLate\ModuleWebServiceLate.csproj", "{AB5C136A-036F-4A93-863D-BF0677B860D6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModuleWebServiceLate", "ModuleWebServiceLate\ModuleWebServiceLate.csproj", "{AB5C136A-036F-4A93-863D-BF0677B860D6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

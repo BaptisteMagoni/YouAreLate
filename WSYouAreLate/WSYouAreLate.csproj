@@ -102,13 +102,15 @@
     <Compile Include="Configuration\BddLateConfiguration.cs" />
     <Compile Include="Configuration\ConnectionStringConfig.cs" />
     <Compile Include="DataAccess\LateDA.cs" />
+    <Compile Include="DTO\CommentaryDTO.cs" />
     <Compile Include="DTO\LateTicketDTO.cs" />
     <Compile Include="DTO\UserDTO.cs" />
-    <Compile Include="DTO\UserLateDTO.cs" />
+    <Compile Include="DTO\VoteDTO.cs" />
+    <Compile Include="Entities\Commentary.cs" />
     <Compile Include="Entities\LateTicket.cs" />
     <Compile Include="Entities\ModelLate.cs" />
     <Compile Include="Entities\Users.cs" />
-    <Compile Include="Entities\UsersLate.cs" />
+    <Compile Include="Entities\UserVote.cs" />
     <Compile Include="ProfileAutoMapper\LateProfile.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
