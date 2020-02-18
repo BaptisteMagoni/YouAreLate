@@ -17,7 +17,6 @@ namespace WSYouAreLate.DTO
 
         public DateTime date { get; set; }
 
-        public Users Users { get; set; }
 
     }
 }

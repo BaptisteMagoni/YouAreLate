@@ -272,10 +272,10 @@ namespace WSYouAreLate.DataAccess
             {
                 using (ModelLate bdd = new ModelLate())
                 {
-                    return bdd.Commentary.Where(x => x.idlate == lateTicket.id).ToList();
+                    return bdd.Database.SqlQuery<Commentary>(String.Format("SELECT * FROM Commentary WHERE idlate = {0}", lateTicket.id)).ToList();
                 }
             }
-            catch
+            catch(Exception e)
             {
                 return new List<Commentary>();
             }
